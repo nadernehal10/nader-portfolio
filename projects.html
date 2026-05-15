@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Projects — Nader Nehal</title>
+<link rel="stylesheet" href="shared.css"/>
+<style>
+.filter-row { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 2.5rem; }
+.filter-btn { padding: 7px 16px; border: 1.5px solid var(--border); border-radius: 99px; font-size: 13px; color: var(--ink-2); background: transparent; cursor: pointer; transition: all 0.15s; font-family: var(--sans); }
+.filter-btn:hover { border-color: var(--border-2); color: var(--ink); }
+.filter-btn.active { background: var(--ink); color: white; border-color: var(--ink); }
+[data-theme="dark"] .filter-btn.active { background: var(--ink); color: var(--cream); }
+
+.projects-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 1.5rem; }
+.project-card { border: 1px solid var(--border); border-radius: 16px; padding: 1.8rem; background: var(--white); transition: all 0.2s; display: flex; flex-direction: column; gap: 12px; }
+.project-card:hover { border-color: var(--border-2); transform: translateY(-2px); box-shadow: 0 8px 32px rgba(0,0,0,0.06); }
+[data-theme="dark"] .project-card:hover { box-shadow: 0 8px 32px rgba(0,0,0,0.2); }
+.project-card-num { font-family: var(--mono); font-size: 11px; color: var(--ink-4); }
+.project-card-title { font-family: var(--disp); font-size: 1.1rem; font-weight: 400; color: var(--ink); letter-spacing: -0.01em; line-height: 1.3; }
+.project-card-co { font-size: 12px; color: var(--accent); font-weight: 500; }
+.project-card-desc { font-size: 13.5px; color: var(--ink-2); line-height: 1.7; flex: 1; }
+.project-card-foot { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 8px; padding-top: 12px; border-top: 1px solid var(--border); }
+.project-card-tags { display: flex; gap: 6px; flex-wrap: wrap; }
+.project-card-period { font-family: var(--mono); font-size: 11px; color: var(--ink-4); }
+
+.project-card[data-cat="enterprise"] .project-card-num::after { content: ' Enterprise'; }
+.project-card[data-cat="platform"] .project-card-num::after { content: ' Platform'; }
+.project-card[data-cat="sustainability"] .project-card-num::after { content: ' Sustainability'; }
+.project-card[data-cat="media"] .project-card-num::after { content: ' Media'; }
+.project-card[data-cat="logistics"] .project-card-num::after { content: ' Logistics'; }
+.project-card[data-cat="pharma"] .project-card-num::after { content: ' Sales'; }
+</style>
+</head>
+<body>
+<nav class="nav">
+  <a href="index.html" class="nav-brand">Nader <span>Nehal</span></a>
+  <div class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="experience.html">Experience</a>
+    <a href="projects.html" class="active">Projects</a>
+    <a href="about.html">About</a>
+  </div>
+  <div class="nav-right">
+    <button class="theme-btn" id="theme-btn">☀️</button>
+    <button class="menu-btn" id="menu-btn"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+<div class="mobile-menu" id="mobile-menu">
+  <a href="index.html">Home</a><a href="experience.html">Experience</a><a href="projects.html">Projects</a><a href="about.html">About</a>
+</div>
+
+<main>
+  <section class="section">
+    <div class="container">
+      <div class="overline fade-up" style="margin-bottom:12px;">Portfolio</div>
+      <h1 class="display-lg fade-up fade-up-1" style="margin-bottom:1rem;">Projects</h1>
+      <p class="fade-up fade-up-2" style="font-size:15px;color:var(--ink-2);max-width:520px;margin-bottom:2.5rem;font-weight:300;">Products and platforms I've contributed to across enterprise software, media, logistics, and sustainability.</p>
+
+      <div class="filter-row fade-up fade-up-3">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="enterprise">Enterprise</button>
+        <button class="filter-btn" data-filter="platform">Platform</button>
+        <button class="filter-btn" data-filter="media">Media</button>
+        <button class="filter-btn" data-filter="logistics">Logistics</button>
+        <button class="filter-btn" data-filter="sustainability">Sustainability</button>
+      </div>
+
+      <div class="projects-grid" id="projects-grid">
+        <div class="project-card fade-up" data-cat="enterprise">
+          <div class="project-card-num">01</div>
+          <div class="project-card-title">Amberg Track Pro — Railway Inspection Platform</div>
+          <div class="project-card-co">SELISE Digital Platforms × Amberg Technologies, Switzerland</div>
+          <div class="project-card-desc">Part of the core team from Sprint 1, contributing to the complete product lifecycle of a railway inspection desktop application. Defined workflows and user stories for a chromium-based app installer built using Advanced Installer bundling Erlang OTP, RabbitMQ, .NET (Kestrel), Redis, Node.js, and MongoDB, ensuring EN-13848 standard compliance for rail inspection.</div>
+          <div class="project-card-foot">
+            <div class="project-card-tags"><span class="tag">Desktop App</span><span class="tag">Rail Tech</span><span class="tag tag-accent">EN-13848</span></div>
+            <div class="project-card-period">Jul 2021 – Jun 2024</div>
+          </div>
+        </div>
+
+        <div class="project-card fade-up fade-up-1" data-cat="platform">
+          <div class="project-card-num">02</div>
+          <div class="project-card-title">CMS for SV Group — Europe-wide Restaurant Chain</div>
+          <div class="project-card-co">SELISE Digital Platforms × SV Group, Switzerland</div>
+          <div class="project-card-desc">Led business analysis for a centralised Content Management System to manage menus and images for 100+ restaurant outlets across Europe. Designed role-based permission matrices for marketing managers, branch managers, and editors. Enabled real-time microsite generation and deployment for individual outlets.</div>
+          <div class="project-card-foot">
+            <div class="project-card-tags"><span class="tag">CMS</span><span class="tag">100+ Outlets</span><span class="tag">Europe</span></div>
+            <div class="project-card-period">Jul 2022 – Jun 2023</div>
+          </div>
+        </div>
+
+        <div class="project-card fade-up fade-up-2" data-cat="sustainability">
+          <div class="project-card-num">03</div>
+          <div class="project-card-title">SV OTW — Sustainability Management Tool</div>
+          <div class="project-card-co">SELISE Digital Platforms × SV Group</div>
+          <div class="project-card-desc">Analysed and designed an internal web-based tool to track and evaluate daily food purchases and wastage across outlets. Enabled branches to log sustainability activities and generate reports aligned with SV's corporate responsibility goals.</div>
+          <div class="project-card-foot">
+            <div class="project-card-tags"><span class="tag">Web Tool</span><span class="tag">Sustainability</span></div>
+            <div class="project-card-period">Oct 2022 – Jan 2023</div>
+          </div>
+        </div>
+
+        <div class="project-card fade-up" data-cat="media">
+          <div class="project-card-num">04</div>
+          <div class="project-card-title">Toffee Star Search — Banglalink OTT Platform</div>
+          <div class="project-card-co">SELISE Digital Platforms × Banglalink</div>
+          <div class="project-card-desc">Gathered and documented requirements for the Toffee Star Search microsite supporting Banglalink's entry into the UGC space. Delivered support for multilingual content, SEO optimisation, and leaderboard integration for user-generated content.</div>
+          <div class="project-card-foot">
+            <div class="project-card-tags"><span class="tag">OTT</span><span class="tag">UGC</span><span class="tag">Multilingual</span></div>
+            <div class="project-card-period">May 2022 – Jul 2022</div>
+          </div>
+        </div>
+
+        <div class="project-card fade-up fade-up-1" data-cat="platform">
+          <div class="project-card-num">05</div>
+          <div class="project-card-title">Repair Management Platform — Service7000 AG</div>
+          <div class="project-card-co">SELISE Digital Platforms × Service7000 AG</div>
+          <div class="project-card-desc">Spearheaded business analysis for a repair and service request management system for tenants, caretakers, and apartment owners. Evaluated and optimised a non-scalable route optimisation algorithm to support real-world deployment for scalable multi-route scheduling.</div>
+          <div class="project-card-foot">
+            <div class="project-card-tags"><span class="tag">SaaS</span><span class="tag">Route Optimisation</span></div>
+            <div class="project-card-period">Dec 2022 – Jun 2024</div>
+          </div>
+        </div>
+
+        <div class="project-card fade-up fade-up-2" data-cat="logistics">
+          <div class="project-card-num">06</div>
+          <div class="project-card-title">Last-Mile Distribution Application</div>
+          <div class="project-card-co">Field Information Solutions Ltd.</div>
+          <div class="project-card-desc">Developed features for a B2B SaaS application ensuring last-mile distribution. Identified potential customers, facilitated onboarding, communicated with end users to identify pain points, and groomed product backlog for sprint readiness.</div>
+          <div class="project-card-foot">
+            <div class="project-card-tags"><span class="tag">B2B SaaS</span><span class="tag">Logistics</span><span class="tag">Bangladesh</span></div>
+            <div class="project-card-period">Apr 2020 – Jul 2021</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-inner">
+      <span class="footer-name">Nader Nehal</span>
+      <div class="footer-links"><a href="mailto:nader.nehal0@gmail.com">Email</a><a href="https://linkedin.com/in/nadernehal" target="_blank">LinkedIn</a></div>
+      <span class="mono">Dhaka, Bangladesh</span>
+    </div>
+  </div>
+</footer>
+<script>
+const html=document.documentElement,themeBtn=document.getElementById('theme-btn');
+if(localStorage.getItem('nn-theme')==='dark'){html.dataset.theme='dark';themeBtn.textContent='🌙';}
+themeBtn.addEventListener('click',()=>{const d=html.dataset.theme==='dark';html.dataset.theme=d?'':'dark';themeBtn.textContent=d?'☀️':'🌙';localStorage.setItem('nn-theme',d?'light':'dark');});
+document.getElementById('menu-btn').addEventListener('click',()=>document.getElementById('mobile-menu').classList.toggle('open'));
+const obs=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting)x.target.classList.add('visible');}),{threshold:0.1});
+document.querySelectorAll('.fade-up').forEach(el=>obs.observe(el));
+// Filter
+document.querySelectorAll('.filter-btn').forEach(btn=>{
+  btn.addEventListener('click',()=>{
+    document.querySelectorAll('.filter-btn').forEach(b=>b.classList.remove('active'));
+    btn.classList.add('active');
+    const f=btn.dataset.filter;
+    document.querySelectorAll('.project-card').forEach(c=>{
+      c.style.display=(f==='all'||c.dataset.cat===f)?'flex':'none';
+    });
+  });
+});
+</script>
+</body>
+</html>

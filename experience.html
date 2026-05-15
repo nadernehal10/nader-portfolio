@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Experience — Nader Nehal</title>
+<link rel="stylesheet" href="shared.css"/>
+<style>
+.exp-layout { display: grid; grid-template-columns: 280px 1fr; gap: 5rem; align-items: start; }
+.exp-sidebar { position: sticky; top: calc(var(--nav-h) + 2rem); }
+.exp-sidebar-title { font-family: var(--disp); font-size: 1.8rem; font-weight: 300; letter-spacing: -0.03em; margin-bottom: 1.5rem; }
+.sidebar-nav { list-style: none; border-left: 1px solid var(--border); padding-left: 1.2rem; }
+.sidebar-nav li { margin-bottom: 4px; }
+.sidebar-nav a { font-size: 13px; color: var(--ink-3); text-decoration: none; padding: 4px 0; display: block; transition: color 0.15s; border-left: 2px solid transparent; margin-left: -1.2rem; padding-left: 1.2rem; }
+.sidebar-nav a:hover, .sidebar-nav a.active { color: var(--ink); border-left-color: var(--accent); }
+
+.exp-item { padding: clamp(2rem, 4vw, 3rem) 0; border-bottom: 1px solid var(--border); }
+.exp-item:last-child { border-bottom: none; }
+.exp-header { display: flex; align-items: flex-start; justify-content: space-between; gap: 1rem; flex-wrap: wrap; margin-bottom: 1.5rem; }
+.exp-role { font-family: var(--disp); font-size: clamp(1.3rem, 2.5vw, 1.7rem); font-weight: 400; letter-spacing: -0.02em; color: var(--ink); margin-bottom: 4px; }
+.exp-company { font-size: 14px; color: var(--accent); font-weight: 500; margin-bottom: 4px; }
+.exp-meta { font-size: 12px; color: var(--ink-3); font-family: var(--mono); }
+.exp-period { font-family: var(--mono); font-size: 12px; color: var(--ink-3); background: var(--surface); padding: 5px 12px; border-radius: 99px; border: 1px solid var(--border); white-space: nowrap; }
+
+.exp-points { list-style: none; margin-top: 1rem; }
+.exp-points li { display: flex; gap: 12px; padding: 7px 0; font-size: 14px; color: var(--ink-2); line-height: 1.65; border-bottom: 1px solid var(--border); }
+.exp-points li:last-child { border-bottom: none; }
+.exp-points li::before { content: '→'; color: var(--accent); font-size: 12px; margin-top: 3px; flex-shrink: 0; }
+
+.project-block { margin-top: 1.5rem; }
+.project-item { border: 1px solid var(--border); border-radius: 12px; padding: 1.2rem 1.4rem; margin-bottom: 10px; transition: border-color 0.2s; }
+.project-item:hover { border-color: var(--border-2); }
+.project-name { font-size: 13.5px; font-weight: 500; color: var(--ink); margin-bottom: 6px; }
+.project-desc { font-size: 13px; color: var(--ink-2); line-height: 1.65; }
+
+.edu-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-top: 1.5rem; }
+.edu-card { border: 1px solid var(--border); border-radius: 12px; padding: 1.4rem; }
+.edu-school { font-size: 14px; font-weight: 500; color: var(--ink); margin-bottom: 4px; }
+.edu-degree { font-size: 13px; color: var(--ink-2); margin-bottom: 6px; }
+
+@media (max-width: 900px) {
+  .exp-layout { grid-template-columns: 1fr; gap: 2rem; }
+  .exp-sidebar { position: static; }
+  .sidebar-nav { display: flex; gap: 0; flex-wrap: wrap; border-left: none; padding-left: 0; border-bottom: 1px solid var(--border); padding-bottom: 1rem; margin-bottom: 1rem; }
+  .sidebar-nav li { margin-bottom: 0; }
+  .sidebar-nav a { border-left: none; border-bottom: 2px solid transparent; margin-left: 0; padding: 6px 12px; }
+  .sidebar-nav a:hover,.sidebar-nav a.active { border-left-color: transparent; border-bottom-color: var(--accent); }
+  .edu-grid { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+<nav class="nav">
+  <a href="index.html" class="nav-brand">Nader <span>Nehal</span></a>
+  <div class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="experience.html" class="active">Experience</a>
+    <a href="projects.html">Projects</a>
+    <a href="about.html">About</a>
+  </div>
+  <div class="nav-right">
+    <button class="theme-btn" id="theme-btn" title="Toggle dark mode">☀️</button>
+    <button class="menu-btn" id="menu-btn"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+<div class="mobile-menu" id="mobile-menu">
+  <a href="index.html">Home</a>
+  <a href="experience.html">Experience</a>
+  <a href="projects.html">Projects</a>
+  <a href="about.html">About</a>
+</div>
+
+<main>
+  <section class="section">
+    <div class="container">
+      <div class="overline fade-up" style="margin-bottom:12px;">Career</div>
+      <h1 class="display-lg fade-up fade-up-1" style="margin-bottom:3rem;">Experience</h1>
+
+      <div class="exp-layout">
+        <aside class="exp-sidebar fade-up">
+          <ul class="sidebar-nav">
+            <li><a href="#brac" class="active">BRAC IT</a></li>
+            <li><a href="#selise">SELISE Digital</a></li>
+            <li><a href="#field">Field Information</a></li>
+            <li><a href="#aks">AKS Khan Pharma</a></li>
+            <li><a href="#education">Education</a></li>
+          </ul>
+        </aside>
+
+        <div>
+          <!-- BRAC IT -->
+          <div class="exp-item fade-up" id="brac">
+            <div class="exp-header">
+              <div>
+                <div class="exp-role">Business Analyst, AVP</div>
+                <div class="exp-company">BRAC IT</div>
+                <div class="exp-meta">Full-time · Dhaka, Bangladesh</div>
+              </div>
+              <div class="exp-period">Jul 2024 – Present</div>
+            </div>
+            <ul class="exp-points">
+              <li>Communicate with stakeholders to understand scope and requirements, ensuring alignment with broad objectives</li>
+              <li>Translate business needs into clear and accurate system and technical requirements in the form of user stories</li>
+              <li>Manage projects by establishing clear roadmaps and plans, monitoring resource utilisation and assessing risks</li>
+              <li>Lead scrum ceremonies such as planning, retrospectives, and stand-ups</li>
+              <li>Facilitate user acceptance testing (UAT) to ensure clients provide precise and timely feedback</li>
+              <li>Cross-collaborate with UX designers to create prototypes ensuring clients can visualise upcoming features</li>
+            </ul>
+          </div>
+
+          <!-- SELISE -->
+          <div class="exp-item fade-up" id="selise">
+            <div class="exp-header">
+              <div>
+                <div class="exp-role">Business Consultant</div>
+                <div class="exp-company">SELISE Digital Platforms</div>
+                <div class="exp-meta">Full-time · Dhaka, Bangladesh</div>
+              </div>
+              <div class="exp-period">Aug 2021 – Jun 2024</div>
+            </div>
+            <div class="project-block">
+              <div style="font-size:11px;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;color:var(--ink-3);margin-bottom:12px;">Projects</div>
+              <div class="project-item">
+                <div class="project-name">Amberg Track Pro (Jul 2021 – Jun 2024)</div>
+                <div class="project-desc">Part of the core team from Sprint 1, contributing to the complete product lifecycle of a railway inspection desktop application for Amberg Technologies. Defined workflows and user stories for a chromium-based app installer, built using Advanced Installer bundling Erlang OTP, RabbitMQ, .NET (Kestrel), Redis, Node.js, and MongoDB, ensuring EN-13848 standard compliance for rail inspection.</div>
+              </div>
+              <div class="project-item">
+                <div class="project-name">CMS for SV Group — Europe-wide Restaurant Chain (Jul 2022 – Jun 2023)</div>
+                <div class="project-desc">Led business analysis for a centralised Content Management System to manage content (menus, images) for 100+ restaurant outlets across Europe. Designed role-based permission matrices for marketing managers, branch managers, and editors. Enabled real-time microsite generation and deployment for individual outlets.</div>
+              </div>
+              <div class="project-item">
+                <div class="project-name">SV OTW — Sustainability Management Tool (Oct 2022 – Jan 2023)</div>
+                <div class="project-desc">Analysed and designed an internal web-based tool to track and evaluate daily food purchases and wastage across outlets. Enabled branches to log activities and generate sustainability reports aligned with SV's corporate responsibility goals.</div>
+              </div>
+              <div class="project-item">
+                <div class="project-name">Toffee Star Search — Banglalink OTT Platform (May 2022 – Jul 2022)</div>
+                <div class="project-desc">Gathered and documented requirements for the Toffee Star Search microsite, supporting Banglalink's entry into the UGC space. Delivered support for multilingual content, SEO optimisation, and leaderboard integration.</div>
+              </div>
+              <div class="project-item">
+                <div class="project-name">Repair Management Platform — Service7000 AG (Dec 2022 – Jun 2024)</div>
+                <div class="project-desc">Spearheaded business analysis for a repair and service request management system for tenants, caretakers, and apartment owners. Evaluated and optimised a non-scalable route optimisation algorithm to support real-world deployment for scalable multi-route scheduling.</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Field Information -->
+          <div class="exp-item fade-up" id="field">
+            <div class="exp-header">
+              <div>
+                <div class="exp-role">Project Consultant</div>
+                <div class="exp-company">Field Information Solutions Ltd.</div>
+                <div class="exp-meta">Full-time · Dhaka, Bangladesh</div>
+              </div>
+              <div class="exp-period">Apr 2020 – Jul 2021</div>
+            </div>
+            <ul class="exp-points">
+              <li>Responsible for development of features for a last-mile distribution application</li>
+              <li>Identify potential customers and facilitate the onboarding process for a seamless experience</li>
+              <li>Communicated with end users to identify pain points and ideate new features</li>
+              <li>Brainstormed new features by analysing needs of various customer segments</li>
+              <li>Groomed product backlog to ensure user stories are sprint-ready</li>
+              <li>Conducted acceptance testing to validate features met acceptance criteria</li>
+            </ul>
+          </div>
+
+          <!-- AKS Khan -->
+          <div class="exp-item fade-up" id="aks">
+            <div class="exp-header">
+              <div>
+                <div class="exp-role">Sales Coordinator</div>
+                <div class="exp-company">AKS Khan Pharma Ltd.</div>
+                <div class="exp-meta">Full-time · Dhaka, Bangladesh</div>
+              </div>
+              <div class="exp-period">May 2018 – Mar 2020</div>
+            </div>
+            <ul class="exp-points">
+              <li>Analysed multiple product portfolios evaluating growth trends and overhead costs</li>
+              <li>Monitored 13 outlet operations across Bangladesh with 150+ employees</li>
+              <li>Coordinated customer tracking to identify service turnaround and onboarding rates</li>
+              <li>Identified effective distribution channels observing seasonal demands and price sensitivities</li>
+            </ul>
+          </div>
+
+          <!-- Education -->
+          <div class="exp-item fade-up" id="education">
+            <div style="font-size:11px;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;color:var(--ink-3);margin-bottom:1.5rem;">Education</div>
+            <div class="edu-grid">
+              <div class="edu-card">
+                <div class="edu-school">East West University (EWU)</div>
+                <div class="edu-degree">Master's in Data Science and Analytics</div>
+                <div class="mono">Oct 2024 – Present</div>
+              </div>
+              <div class="edu-card">
+                <div class="edu-school">Bangladesh University of Professionals (BUP)</div>
+                <div class="edu-degree">BBA, Major: Finance</div>
+                <div class="mono">Jan 2014 – Mar 2018</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-inner">
+      <span class="footer-name">Nader Nehal</span>
+      <div class="footer-links">
+        <a href="mailto:nader.nehal0@gmail.com">Email</a>
+        <a href="https://linkedin.com/in/nadernehal" target="_blank">LinkedIn</a>
+      </div>
+      <span class="mono">Dhaka, Bangladesh</span>
+    </div>
+  </div>
+</footer>
+<script>
+const html=document.documentElement,themeBtn=document.getElementById('theme-btn');
+const saved=localStorage.getItem('nn-theme');
+if(saved==='dark'){html.dataset.theme='dark';themeBtn.textContent='🌙';}
+themeBtn.addEventListener('click',()=>{const d=html.dataset.theme==='dark';html.dataset.theme=d?'':'dark';themeBtn.textContent=d?'☀️':'🌙';localStorage.setItem('nn-theme',d?'light':'dark');});
+const menuBtn=document.getElementById('menu-btn'),mobileMenu=document.getElementById('mobile-menu');
+menuBtn.addEventListener('click',()=>mobileMenu.classList.toggle('open'));
+const obs=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting)x.target.classList.add('visible');}),{threshold:0.1});
+document.querySelectorAll('.fade-up').forEach(el=>obs.observe(el));
+// Sidebar active on scroll
+const sections=document.querySelectorAll('.exp-item[id]');
+const links=document.querySelectorAll('.sidebar-nav a');
+window.addEventListener('scroll',()=>{
+  let cur='';
+  sections.forEach(s=>{if(window.scrollY>=s.offsetTop-120)cur=s.id;});
+  links.forEach(l=>{l.classList.toggle('active',l.getAttribute('href')==='#'+cur);});
+});
+</script>
+</body>
+</html>
