@@ -6,46 +6,48 @@
 <title>Experience — Nader Nehal</title>
 <link rel="stylesheet" href="shared.css"/>
 <style>
-.exp-layout { display: grid; grid-template-columns: 280px 1fr; gap: 5rem; align-items: start; }
-.exp-sidebar { position: sticky; top: calc(var(--nav-h) + 2rem); }
-.exp-sidebar-title { font-family: var(--disp); font-size: 1.8rem; font-weight: 300; letter-spacing: -0.03em; margin-bottom: 1.5rem; }
-.sidebar-nav { list-style: none; border-left: 1px solid var(--border); padding-left: 1.2rem; }
-.sidebar-nav li { margin-bottom: 4px; }
-.sidebar-nav a { font-size: 13px; color: var(--ink-3); text-decoration: none; padding: 4px 0; display: block; transition: color 0.15s; border-left: 2px solid transparent; margin-left: -1.2rem; padding-left: 1.2rem; }
-.sidebar-nav a:hover, .sidebar-nav a.active { color: var(--ink); border-left-color: var(--accent); }
-
-.exp-item { padding: clamp(2rem, 4vw, 3rem) 0; border-bottom: 1px solid var(--border); }
-.exp-item:last-child { border-bottom: none; }
-.exp-header { display: flex; align-items: flex-start; justify-content: space-between; gap: 1rem; flex-wrap: wrap; margin-bottom: 1.5rem; }
-.exp-role { font-family: var(--disp); font-size: clamp(1.3rem, 2.5vw, 1.7rem); font-weight: 400; letter-spacing: -0.02em; color: var(--ink); margin-bottom: 4px; }
-.exp-company { font-size: 14px; color: var(--accent); font-weight: 500; margin-bottom: 4px; }
-.exp-meta { font-size: 12px; color: var(--ink-3); font-family: var(--mono); }
-.exp-period { font-family: var(--mono); font-size: 12px; color: var(--ink-3); background: var(--surface); padding: 5px 12px; border-radius: 99px; border: 1px solid var(--border); white-space: nowrap; }
-
-.exp-points { list-style: none; margin-top: 1rem; }
-.exp-points li { display: flex; gap: 12px; padding: 7px 0; font-size: 14px; color: var(--ink-2); line-height: 1.65; border-bottom: 1px solid var(--border); }
-.exp-points li:last-child { border-bottom: none; }
-.exp-points li::before { content: '→'; color: var(--accent); font-size: 12px; margin-top: 3px; flex-shrink: 0; }
-
-.project-block { margin-top: 1.5rem; }
-.project-item { border: 1px solid var(--border); border-radius: 12px; padding: 1.2rem 1.4rem; margin-bottom: 10px; transition: border-color 0.2s; }
-.project-item:hover { border-color: var(--border-2); }
-.project-name { font-size: 13.5px; font-weight: 500; color: var(--ink); margin-bottom: 6px; }
-.project-desc { font-size: 13px; color: var(--ink-2); line-height: 1.65; }
-
-.edu-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-top: 1.5rem; }
-.edu-card { border: 1px solid var(--border); border-radius: 12px; padding: 1.4rem; }
-.edu-school { font-size: 14px; font-weight: 500; color: var(--ink); margin-bottom: 4px; }
-.edu-degree { font-size: 13px; color: var(--ink-2); margin-bottom: 6px; }
-
-@media (max-width: 900px) {
-  .exp-layout { grid-template-columns: 1fr; gap: 2rem; }
-  .exp-sidebar { position: static; }
-  .sidebar-nav { display: flex; gap: 0; flex-wrap: wrap; border-left: none; padding-left: 0; border-bottom: 1px solid var(--border); padding-bottom: 1rem; margin-bottom: 1rem; }
-  .sidebar-nav li { margin-bottom: 0; }
-  .sidebar-nav a { border-left: none; border-bottom: 2px solid transparent; margin-left: 0; padding: 6px 12px; }
-  .sidebar-nav a:hover,.sidebar-nav a.active { border-left-color: transparent; border-bottom-color: var(--accent); }
-  .edu-grid { grid-template-columns: 1fr; }
+.exp-layout{display:grid;grid-template-columns:280px 1fr;gap:5rem;align-items:start;}
+.exp-sidebar{position:sticky;top:calc(var(--nav-h) + 2rem);}
+.exp-sidebar-title{font-family:var(--disp);font-size:1.8rem;font-weight:300;letter-spacing:-0.03em;margin-bottom:1.5rem;}
+.sidebar-nav{list-style:none;border-left:1px solid var(--border);padding-left:1.2rem;}
+.sidebar-nav li{margin-bottom:4px;}
+.sidebar-nav a{font-size:13px;color:var(--ink-3);text-decoration:none;padding:4px 0;display:block;transition:color 0.15s;border-left:2px solid transparent;margin-left:-1.2rem;padding-left:1.2rem;}
+.sidebar-nav a:hover,.sidebar-nav a.active{color:var(--ink);border-left-color:var(--accent);}
+.exp-item{padding:clamp(2rem,4vw,3rem) 0;border-bottom:1px solid var(--border);}
+.exp-item:last-child{border-bottom:none;}
+.exp-header{display:flex;align-items:flex-start;justify-content:space-between;gap:1rem;flex-wrap:wrap;margin-bottom:1.5rem;}
+.exp-role{font-family:var(--disp);font-size:clamp(1.3rem,2.5vw,1.7rem);font-weight:400;letter-spacing:-0.02em;color:var(--ink);margin-bottom:4px;}
+.exp-company{font-size:14px;color:var(--accent);font-weight:500;margin-bottom:4px;}
+.exp-company a{color:var(--accent);text-decoration:none;}
+.exp-company a:hover{text-decoration:underline;}
+.exp-meta{font-size:12px;color:var(--ink-3);font-family:var(--mono);}
+.exp-period{font-family:var(--mono);font-size:12px;color:var(--ink-3);background:var(--surface);padding:5px 12px;border-radius:99px;border:1px solid var(--border);white-space:nowrap;}
+.exp-points{list-style:none;margin-top:1rem;}
+.exp-points li{display:flex;gap:12px;padding:7px 0;font-size:14px;color:var(--ink-2);line-height:1.65;border-bottom:1px solid var(--border);}
+.exp-points li:last-child{border-bottom:none;}
+.exp-points li::before{content:'→';color:var(--accent);font-size:12px;margin-top:3px;flex-shrink:0;}
+.project-block{margin-top:1.5rem;}
+.project-item{border:1px solid var(--border);border-radius:12px;padding:1.2rem 1.4rem;margin-bottom:10px;transition:border-color 0.2s;}
+.project-item:hover{border-color:var(--border-2);}
+.project-name{font-size:13.5px;font-weight:500;color:var(--ink);margin-bottom:6px;}
+.project-name a{color:var(--accent);text-decoration:none;font-size:12px;margin-left:8px;font-weight:400;}
+.project-name a:hover{text-decoration:underline;}
+.project-desc{font-size:13px;color:var(--ink-2);line-height:1.65;}
+.project-imgs{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:12px;}
+.project-imgs img{width:100%;height:120px;object-fit:cover;border-radius:8px;border:1px solid var(--border);}
+.edu-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;margin-top:1.5rem;}
+.edu-card{border:1px solid var(--border);border-radius:12px;padding:1.4rem;}
+.edu-school{font-size:14px;font-weight:500;color:var(--ink);margin-bottom:4px;}
+.edu-degree{font-size:13px;color:var(--ink-2);margin-bottom:6px;}
+@media(max-width:900px){
+  .exp-layout{grid-template-columns:1fr;gap:2rem;}
+  .exp-sidebar{position:static;}
+  .sidebar-nav{display:flex;gap:0;flex-wrap:wrap;border-left:none;padding-left:0;border-bottom:1px solid var(--border);padding-bottom:1rem;margin-bottom:1rem;overflow-x:auto;}
+  .sidebar-nav li{margin-bottom:0;}
+  .sidebar-nav a{border-left:none;border-bottom:2px solid transparent;margin-left:0;padding:6px 12px;white-space:nowrap;}
+  .sidebar-nav a:hover,.sidebar-nav a.active{border-left-color:transparent;border-bottom-color:var(--accent);}
+  .edu-grid{grid-template-columns:1fr;}
+  .project-imgs{grid-template-columns:1fr;}
 }
 </style>
 </head>
@@ -59,15 +61,12 @@
     <a href="about.html">About</a>
   </div>
   <div class="nav-right">
-    <button class="theme-btn" id="theme-btn" title="Toggle dark mode">☀️</button>
+    <button class="theme-btn" id="theme-btn">☀️</button>
     <button class="menu-btn" id="menu-btn"><span></span><span></span><span></span></button>
   </div>
 </nav>
 <div class="mobile-menu" id="mobile-menu">
-  <a href="index.html">Home</a>
-  <a href="experience.html">Experience</a>
-  <a href="projects.html">Projects</a>
-  <a href="about.html">About</a>
+  <a href="index.html">Home</a><a href="experience.html">Experience</a><a href="projects.html">Projects</a><a href="about.html">About</a>
 </div>
 
 <main>
@@ -75,14 +74,14 @@
     <div class="container">
       <div class="overline fade-up" style="margin-bottom:12px;">Career</div>
       <h1 class="display-lg fade-up fade-up-1" style="margin-bottom:3rem;">Experience</h1>
-
       <div class="exp-layout">
         <aside class="exp-sidebar fade-up">
           <ul class="sidebar-nav">
             <li><a href="#brac" class="active">BRAC IT</a></li>
             <li><a href="#selise">SELISE Digital</a></li>
             <li><a href="#field">Field Information</a></li>
-            <li><a href="#aks">AKS Khan Pharma</a></li>
+            <li><a href="#aks">AKS Khan</a></li>
+            <li><a href="#gp">Grameenphone</a></li>
             <li><a href="#education">Education</a></li>
           </ul>
         </aside>
@@ -93,16 +92,16 @@
             <div class="exp-header">
               <div>
                 <div class="exp-role">Business Analyst, AVP</div>
-                <div class="exp-company">BRAC IT</div>
+                <div class="exp-company"><a href="https://bracit.com/" target="_blank">BRAC IT</a></div>
                 <div class="exp-meta">Full-time · Dhaka, Bangladesh</div>
               </div>
               <div class="exp-period">Jul 2024 – Present</div>
             </div>
             <ul class="exp-points">
-              <li>Communicate with stakeholders to understand scope and requirements, ensuring alignment with broad objectives</li>
+              <li>Communicate with stakeholders to understand scope and requirements, ensuring alignment with broad business objectives</li>
               <li>Translate business needs into clear and accurate system and technical requirements in the form of user stories</li>
               <li>Manage projects by establishing clear roadmaps and plans, monitoring resource utilisation and assessing risks</li>
-              <li>Lead scrum ceremonies such as planning, retrospectives, and stand-ups</li>
+              <li>Lead scrum ceremonies including sprint planning, retrospectives, and daily stand-ups</li>
               <li>Facilitate user acceptance testing (UAT) to ensure clients provide precise and timely feedback</li>
               <li>Cross-collaborate with UX designers to create prototypes ensuring clients can visualise upcoming features</li>
             </ul>
@@ -113,32 +112,46 @@
             <div class="exp-header">
               <div>
                 <div class="exp-role">Business Consultant</div>
-                <div class="exp-company">SELISE Digital Platforms</div>
+                <div class="exp-company"><a href="https://selisegroup.com/" target="_blank">SELISE Digital Platforms</a></div>
                 <div class="exp-meta">Full-time · Dhaka, Bangladesh</div>
               </div>
               <div class="exp-period">Aug 2021 – Jun 2024</div>
             </div>
             <div class="project-block">
               <div style="font-size:11px;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;color:var(--ink-3);margin-bottom:12px;">Projects</div>
+
               <div class="project-item">
-                <div class="project-name">Amberg Track Pro (Jul 2021 – Jun 2024)</div>
-                <div class="project-desc">Part of the core team from Sprint 1, contributing to the complete product lifecycle of a railway inspection desktop application for Amberg Technologies. Defined workflows and user stories for a chromium-based app installer, built using Advanced Installer bundling Erlang OTP, RabbitMQ, .NET (Kestrel), Redis, Node.js, and MongoDB, ensuring EN-13848 standard compliance for rail inspection.</div>
+                <div class="project-name">Amberg Track Pro (Jul 2021 – Jun 2024) <a href="https://ambergtechnologies.com/" target="_blank">↗ Amberg Technologies</a></div>
+                <div class="project-desc">Part of the core team from Sprint 1, contributing to the complete product lifecycle of a railway inspection desktop application. Defined workflows and user stories for a chromium-based app installer built using Advanced Installer bundling Erlang OTP, RabbitMQ, .NET (Kestrel), Redis, Node.js, and MongoDB, ensuring EN-13848 standard compliance for rail inspection.</div>
+                <div class="project-imgs">
+                  <img src="amberg1.jpeg" alt="Amberg Track Pro field tablet" loading="lazy"/>
+                  <img src="amberg2.jpeg" alt="Amberg Track Pro office dashboard" loading="lazy"/>
+                </div>
               </div>
+
               <div class="project-item">
-                <div class="project-name">CMS for SV Group — Europe-wide Restaurant Chain (Jul 2022 – Jun 2023)</div>
-                <div class="project-desc">Led business analysis for a centralised Content Management System to manage content (menus, images) for 100+ restaurant outlets across Europe. Designed role-based permission matrices for marketing managers, branch managers, and editors. Enabled real-time microsite generation and deployment for individual outlets.</div>
+                <div class="project-name">CMS for SV Group — Europe-wide Restaurant Chain (Jul 2022 – Jun 2023) <a href="https://sv-group.com/en" target="_blank">↗ SV Group</a></div>
+                <div class="project-desc">Led business analysis for a centralised Content Management System managing content for 100+ restaurant outlets across Europe. Designed role-based permission matrices for marketing managers, branch managers, and editors. Enabled real-time microsite generation and deployment for individual outlets.</div>
               </div>
+
               <div class="project-item">
                 <div class="project-name">SV OTW — Sustainability Management Tool (Oct 2022 – Jan 2023)</div>
-                <div class="project-desc">Analysed and designed an internal web-based tool to track and evaluate daily food purchases and wastage across outlets. Enabled branches to log activities and generate sustainability reports aligned with SV's corporate responsibility goals.</div>
+                <div class="project-desc">Analysed and designed an internal web-based tool to track and evaluate daily food purchases and wastage across outlets. Enabled branches to log sustainability activities and generate reports aligned with SV's corporate responsibility goals.</div>
               </div>
+
               <div class="project-item">
-                <div class="project-name">Toffee Star Search — Banglalink OTT Platform (May 2022 – Jul 2022)</div>
-                <div class="project-desc">Gathered and documented requirements for the Toffee Star Search microsite, supporting Banglalink's entry into the UGC space. Delivered support for multilingual content, SEO optimisation, and leaderboard integration.</div>
+                <div class="project-name">Toffee Star Search — Banglalink OTT Platform (May 2022 – Jul 2022) <a href="https://www.banglalink.net/" target="_blank">↗ Banglalink</a></div>
+                <div class="project-desc">Gathered and documented requirements for the Toffee Star Search microsite supporting Banglalink's entry into the UGC space. Delivered support for multilingual content, SEO optimisation, and leaderboard integration.</div>
               </div>
+
               <div class="project-item">
-                <div class="project-name">Repair Management Platform — Service7000 AG (Dec 2022 – Jun 2024)</div>
+                <div class="project-name">Repair Management Platform — Service7000 AG (Dec 2022 – Jun 2024) <a href="http://www.service7000.ch" target="_blank">↗ Service7000</a></div>
                 <div class="project-desc">Spearheaded business analysis for a repair and service request management system for tenants, caretakers, and apartment owners. Evaluated and optimised a non-scalable route optimisation algorithm to support real-world deployment for scalable multi-route scheduling.</div>
+              </div>
+
+              <div class="project-item">
+                <div class="project-name">Swiss Leaders (SKO) — Professional Exams Platform <a href="https://www.swissleaders.ch/?_locale=en" target="_blank">↗ Swiss Leaders</a></div>
+                <div class="project-desc">Contributed to a digital platform for Swiss Leaders (formerly SKO), Switzerland's leading professional association for executives since 1893 with 10,000+ members. Supported the platform covering professional certification and leadership examination processes for Swiss executives and managers across industries.</div>
               </div>
             </div>
           </div>
@@ -154,12 +167,12 @@
               <div class="exp-period">Apr 2020 – Jul 2021</div>
             </div>
             <ul class="exp-points">
-              <li>Responsible for development of features for a last-mile distribution application</li>
+              <li>Responsible for development of features for a B2B last-mile distribution application</li>
               <li>Identify potential customers and facilitate the onboarding process for a seamless experience</li>
               <li>Communicated with end users to identify pain points and ideate new features</li>
-              <li>Brainstormed new features by analysing needs of various customer segments</li>
-              <li>Groomed product backlog to ensure user stories are sprint-ready</li>
-              <li>Conducted acceptance testing to validate features met acceptance criteria</li>
+              <li>Brainstormed new features by analysing needs of various customer segments to widen the user base</li>
+              <li>Groomed product backlog to ensure user stories are complete and ready to be incorporated in sprints</li>
+              <li>Conducted acceptance testing to validate features have met their acceptance criteria</li>
             </ul>
           </div>
 
@@ -167,17 +180,35 @@
           <div class="exp-item fade-up" id="aks">
             <div class="exp-header">
               <div>
-                <div class="exp-role">Sales Coordinator</div>
-                <div class="exp-company">AKS Khan Pharma Ltd.</div>
+                <div class="exp-role">Sales Coordinator, Operations & Business Research</div>
+                <div class="exp-company">AKS Khan Pharmaceuticals Ltd.</div>
                 <div class="exp-meta">Full-time · Dhaka, Bangladesh</div>
               </div>
               <div class="exp-period">May 2018 – Mar 2020</div>
             </div>
             <ul class="exp-points">
-              <li>Analysed multiple product portfolios evaluating growth trends and overhead costs</li>
-              <li>Monitored 13 outlet operations across Bangladesh with 150+ employees</li>
-              <li>Coordinated customer tracking to identify service turnaround and onboarding rates</li>
-              <li>Identified effective distribution channels observing seasonal demands and price sensitivities</li>
+              <li>Analysed multiple product portfolios evaluating growth trends, breaking down overhead costs, and examining revenue generated for each product to identify profitability</li>
+              <li>Monitored 13 outlet operations across Bangladesh consisting 150+ employees to identify prospective opportunities and pain points</li>
+              <li>Coordinated customer tracking activities to identify service turnaround rates, onboarding rates, and percentage of recurring customers</li>
+              <li>Identified effective distribution channels by observing seasonal demands, location and price sensitivities</li>
+              <li>Developed cost targets for negotiations and negotiation strategies</li>
+            </ul>
+          </div>
+
+          <!-- Grameenphone -->
+          <div class="exp-item fade-up" id="gp">
+            <div class="exp-header">
+              <div>
+                <div class="exp-role">Customer Service Manager (Part-time)</div>
+                <div class="exp-company">Grameenphone Ltd.</div>
+                <div class="exp-meta">Part-time · Bangladesh</div>
+              </div>
+              <div class="exp-period">Jul 2015 – Feb 2016</div>
+            </div>
+            <ul class="exp-points">
+              <li>Managed customer service operations at a Grameenphone service centre</li>
+              <li>Handled customer queries, complaints, and escalations</li>
+              <li>Supported onboarding of new customers and product activations</li>
             </ul>
           </div>
 
@@ -210,6 +241,7 @@
       <div class="footer-links">
         <a href="mailto:nader.nehal0@gmail.com">Email</a>
         <a href="https://linkedin.com/in/nadernehal" target="_blank">LinkedIn</a>
+        <a href="https://github.com/nadernehal10" target="_blank">GitHub</a>
       </div>
       <span class="mono">Dhaka, Bangladesh</span>
     </div>
@@ -217,14 +249,11 @@
 </footer>
 <script>
 const html=document.documentElement,themeBtn=document.getElementById('theme-btn');
-const saved=localStorage.getItem('nn-theme');
-if(saved==='dark'){html.dataset.theme='dark';themeBtn.textContent='🌙';}
+if(localStorage.getItem('nn-theme')==='dark'){html.dataset.theme='dark';themeBtn.textContent='🌙';}
 themeBtn.addEventListener('click',()=>{const d=html.dataset.theme==='dark';html.dataset.theme=d?'':'dark';themeBtn.textContent=d?'☀️':'🌙';localStorage.setItem('nn-theme',d?'light':'dark');});
-const menuBtn=document.getElementById('menu-btn'),mobileMenu=document.getElementById('mobile-menu');
-menuBtn.addEventListener('click',()=>mobileMenu.classList.toggle('open'));
+document.getElementById('menu-btn').addEventListener('click',()=>document.getElementById('mobile-menu').classList.toggle('open'));
 const obs=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting)x.target.classList.add('visible');}),{threshold:0.1});
 document.querySelectorAll('.fade-up').forEach(el=>obs.observe(el));
-// Sidebar active on scroll
 const sections=document.querySelectorAll('.exp-item[id]');
 const links=document.querySelectorAll('.sidebar-nav a');
 window.addEventListener('scroll',()=>{
