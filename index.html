@@ -4,63 +4,59 @@
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width,initial-scale=1"/>
 <title>Nader Nehal — Business Analyst & Product Owner</title>
-<meta name="description" content="Senior Business Analyst and Certified Scrum Product Owner with 7+ years in IT product domain. Based in Dhaka, Bangladesh."/>
+<meta name="description" content="Senior Business Analyst and Certified Scrum Product Owner with 8+ years across IT, enterprise software, pharma, and logistics. Based in Dhaka, Bangladesh."/>
 <link rel="stylesheet" href="shared.css"/>
 <style>
-/* HERO */
-.hero { min-height: calc(100vh - var(--nav-h)); display: flex; flex-direction: column; justify-content: center; padding: clamp(3rem,6vw,5rem) 0; position: relative; overflow: hidden; }
-.hero::before { content: ''; position: absolute; top: -20%; right: -10%; width: 600px; height: 600px; border-radius: 50%; background: radial-gradient(circle, rgba(26,107,60,0.06) 0%, transparent 70%); pointer-events: none; }
-.hero-eyebrow { display: flex; align-items: center; gap: 12px; margin-bottom: 2rem; }
-.hero-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--accent); flex-shrink: 0; }
-.hero-title { margin-bottom: 1.5rem; }
-.hero-title em { font-style: italic; color: var(--accent); }
-.hero-sub { font-size: clamp(1rem, 2vw, 1.15rem); color: var(--ink-2); max-width: 560px; line-height: 1.8; margin-bottom: 2.5rem; font-weight: 300; }
-.hero-actions { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 4rem; }
-.hero-stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; border: 1px solid var(--border); border-radius: 16px; overflow: hidden; max-width: 580px; }
-.stat-item { padding: 1.5rem; border-right: 1px solid var(--border); }
-.stat-item:last-child { border-right: none; }
-.stat-num { font-family: var(--disp); font-size: 2.2rem; font-weight: 300; letter-spacing: -0.03em; color: var(--ink); line-height: 1; margin-bottom: 4px; }
-.stat-label { font-size: 11.5px; color: var(--ink-3); font-weight: 400; line-height: 1.4; }
-
-/* MARQUEE */
-.marquee-wrap { overflow: hidden; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); padding: 14px 0; background: var(--surface); }
-.marquee-inner { display: flex; gap: 3rem; animation: marquee 20s linear infinite; white-space: nowrap; }
-.marquee-item { font-size: 12px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-3); display: flex; align-items: center; gap: 12px; }
-.marquee-item::after { content: '✦'; color: var(--accent); font-size: 8px; }
-@keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
-
-/* FEATURED WORK */
-.work-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5px; background: var(--border); border: 1px solid var(--border); border-radius: 16px; overflow: hidden; }
-.work-card { background: var(--white); padding: 2rem; transition: background 0.2s; cursor: default; position: relative; }
-.work-card:hover { background: var(--cream); }
-.work-card-wide { grid-column: 1 / -1; }
-.work-num { font-family: var(--mono); font-size: 11px; color: var(--ink-4); margin-bottom: 1rem; }
-.work-title { font-family: var(--disp); font-size: 1.2rem; font-weight: 400; color: var(--ink); margin-bottom: 8px; letter-spacing: -0.01em; line-height: 1.3; }
-.work-co { font-size: 12px; color: var(--accent); font-weight: 500; margin-bottom: 12px; }
-.work-desc { font-size: 13.5px; color: var(--ink-2); line-height: 1.7; }
-.work-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 1rem; }
-
-/* SKILLS SECTION */
-.skills-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; }
-.skill-list { list-style: none; }
-.skill-list li { display: flex; align-items: center; gap: 10px; padding: 10px 0; border-bottom: 1px solid var(--border); font-size: 14px; color: var(--ink-2); }
-.skill-list li::before { content: ''; width: 4px; height: 4px; border-radius: 50%; background: var(--accent); flex-shrink: 0; }
-
-/* CTA */
-.cta-band { background: var(--accent); color: white; border-radius: 20px; padding: clamp(2.5rem, 5vw, 4rem); text-align: center; margin: 0 0 clamp(3rem, 6vw, 5rem); }
-[data-theme="dark"] .cta-band { background: var(--white); }
-.cta-band .display-md { color: white; margin-bottom: 1rem; }
-[data-theme="dark"] .cta-band .display-md { color: var(--ink); }
-.cta-band p { color: rgba(255,255,255,0.6); margin-bottom: 2rem; font-size: 15px; }
-[data-theme="dark"] .cta-band p { color: var(--ink-3); }
-
-@media (max-width: 768px) {
-  .work-grid { grid-template-columns: 1fr; }
-  .work-card-wide { grid-column: 1; }
-  .skills-layout { grid-template-columns: 1fr; gap: 2rem; }
-  .hero-stats { grid-template-columns: 1fr; max-width: 280px; }
-  .stat-item { border-right: none; border-bottom: 1px solid var(--border); }
-  .stat-item:last-child { border-bottom: none; }
+.hero{min-height:calc(100vh - var(--nav-h));display:flex;flex-direction:column;justify-content:center;padding:clamp(3rem,6vw,5rem) 0;position:relative;overflow:hidden;}
+.hero::before{content:'';position:absolute;top:-20%;right:-10%;width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(26,107,60,0.06) 0%,transparent 70%);pointer-events:none;}
+.hero-eyebrow{display:flex;align-items:center;gap:12px;margin-bottom:2rem;}
+.hero-dot{width:8px;height:8px;border-radius:50%;background:var(--accent);flex-shrink:0;}
+.hero-title{margin-bottom:1.5rem;}
+.hero-title em{font-style:italic;color:var(--accent);}
+.hero-sub{font-size:clamp(1rem,2vw,1.15rem);color:var(--ink-2);max-width:560px;line-height:1.8;margin-bottom:2.5rem;font-weight:300;}
+.hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:4rem;}
+.hero-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border:1px solid var(--border);border-radius:16px;overflow:hidden;max-width:580px;}
+.stat-item{padding:1.5rem;border-right:1px solid var(--border);}
+.stat-item:last-child{border-right:none;}
+.stat-num{font-family:var(--disp);font-size:2.2rem;font-weight:300;letter-spacing:-0.03em;color:var(--ink);line-height:1;margin-bottom:4px;}
+.stat-label{font-size:11.5px;color:var(--ink-3);font-weight:400;line-height:1.4;}
+.marquee-wrap{overflow:hidden;border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:14px 0;background:var(--surface);}
+.marquee-inner{display:flex;gap:3rem;animation:marquee 20s linear infinite;white-space:nowrap;}
+.marquee-item{font-size:12px;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;color:var(--ink-3);display:flex;align-items:center;gap:12px;}
+.marquee-item::after{content:'✦';color:var(--accent);font-size:8px;}
+@keyframes marquee{from{transform:translateX(0);}to{transform:translateX(-50%);}}
+.work-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.5px;background:var(--border);border:1px solid var(--border);border-radius:16px;overflow:hidden;}
+.work-card{background:var(--white);padding:2rem;transition:background 0.2s;position:relative;}
+.work-card:hover{background:var(--cream);}
+.work-card-wide{grid-column:1/-1;}
+.work-num{font-family:var(--mono);font-size:11px;color:var(--ink-4);margin-bottom:1rem;}
+.work-title{font-family:var(--disp);font-size:1.2rem;font-weight:400;color:var(--ink);margin-bottom:8px;letter-spacing:-0.01em;line-height:1.3;}
+.work-co{font-size:12px;color:var(--accent);font-weight:500;margin-bottom:12px;}
+.work-co a{color:var(--accent);text-decoration:none;}
+.work-co a:hover{text-decoration:underline;}
+.work-desc{font-size:13.5px;color:var(--ink-2);line-height:1.7;}
+.work-tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:1rem;}
+.work-img{width:100%;height:180px;object-fit:cover;border-radius:8px;margin-top:1rem;border:1px solid var(--border);}
+.skills-layout{display:grid;grid-template-columns:1fr 1fr;gap:4rem;}
+.skill-list{list-style:none;}
+.skill-list li{display:flex;align-items:center;gap:10px;padding:10px 0;border-bottom:1px solid var(--border);font-size:14px;color:var(--ink-2);}
+.skill-list li::before{content:'';width:4px;height:4px;border-radius:50%;background:var(--accent);flex-shrink:0;}
+.cta-band{background:#0f3d22;color:white;border-radius:20px;padding:clamp(2.5rem,5vw,4rem);text-align:center;margin:0 0 clamp(3rem,6vw,5rem);}
+[data-theme="dark"] .cta-band{background:var(--white);}
+.cta-band .display-md{color:white;margin-bottom:1rem;}
+[data-theme="dark"] .cta-band .display-md{color:var(--ink);}
+.cta-band p{color:rgba(255,255,255,0.6);margin-bottom:2rem;font-size:15px;}
+[data-theme="dark"] .cta-band p{color:var(--ink-3);}
+.resume-btn{display:inline-flex;align-items:center;gap:8px;padding:11px 24px;border-radius:99px;font-size:14px;font-weight:500;cursor:pointer;transition:all 0.2s;text-decoration:none;border:1.5px solid rgba(255,255,255,0.3);color:white;background:transparent;}
+.resume-btn:hover{background:rgba(255,255,255,0.1);border-color:rgba(255,255,255,0.6);}
+[data-theme="dark"] .resume-btn{border-color:var(--border-2);color:var(--ink);}
+@media(max-width:768px){
+  .work-grid{grid-template-columns:1fr;}
+  .work-card-wide{grid-column:1;}
+  .skills-layout{grid-template-columns:1fr;gap:2rem;}
+  .hero-stats{grid-template-columns:1fr;max-width:280px;}
+  .stat-item{border-right:none;border-bottom:1px solid var(--border);}
+  .stat-item:last-child{border-bottom:none;}
 }
 </style>
 </head>
@@ -86,27 +82,22 @@
 </div>
 
 <main>
-  <!-- HERO -->
   <section class="hero">
     <div class="container">
-      <div class="hero-eyebrow fade-up">
-        <div class="hero-dot"></div>
-        <span class="overline">Available for new opportunities</span>
-      </div>
-      <h1 class="display-xl hero-title fade-up fade-up-1">
+      <h1 class="display-xl hero-title fade-up">
         Product<br>
         <em>thinker.</em><br>
         Systems builder.
       </h1>
-      <p class="hero-sub fade-up fade-up-2">Senior Business Analyst & Certified Scrum Product Owner with 7+ years bridging complex technical systems and real-world business needs. Based in Dhaka, Bangladesh.</p>
-      <div class="hero-actions fade-up fade-up-3">
+      <p class="hero-sub fade-up fade-up-1">Senior Business Analyst & Certified Scrum Product Owner with 8+ years across IT products, enterprise software, logistics, and pharma. Based in Dhaka, Bangladesh.</p>
+      <div class="hero-actions fade-up fade-up-2">
         <a href="experience.html" class="btn btn-primary">View Experience</a>
         <a href="about.html" class="btn btn-outline">About Me</a>
       </div>
-      <div class="hero-stats fade-up fade-up-4">
+      <div class="hero-stats fade-up fade-up-3">
         <div class="stat-item">
-          <div class="stat-num">7+</div>
-          <div class="stat-label">Years in IT product domain</div>
+          <div class="stat-num">8+</div>
+          <div class="stat-label">Years of professional experience</div>
         </div>
         <div class="stat-item">
           <div class="stat-num">10+</div>
@@ -120,7 +111,6 @@
     </div>
   </section>
 
-  <!-- MARQUEE -->
   <div class="marquee-wrap">
     <div class="marquee-inner">
       <span class="marquee-item">Business Analysis</span>
@@ -142,7 +132,6 @@
     </div>
   </div>
 
-  <!-- FEATURED WORK -->
   <section class="section">
     <div class="container">
       <div style="display:flex;align-items:flex-end;justify-content:space-between;flex-wrap:wrap;gap:1rem;margin-bottom:2.5rem;">
@@ -154,37 +143,32 @@
       </div>
       <div class="work-grid fade-up fade-up-1">
         <div class="work-card work-card-wide">
-          <div class="work-num">01 — Enterprise Software</div>
+          <div class="work-num">01 — Enterprise Software · Rail Tech</div>
           <div class="work-title">Amberg Track Pro — Railway Inspection Platform</div>
-          <div class="work-co">SELISE Digital Platforms × Amberg Technologies</div>
-          <div class="work-desc">Led product analysis from Sprint 1 for a railway inspection desktop application ensuring EN-13848 standard compliance. Defined installer workflows using Erlang OTP, RabbitMQ, and .NET Kestrel for a safety-critical European rail product.</div>
+          <div class="work-co"><a href="https://selisegroup.com/" target="_blank">SELISE Digital Platforms</a> × <a href="https://ambergtechnologies.com/" target="_blank">Amberg Technologies</a></div>
+          <div class="work-desc">Led product analysis from Sprint 1 for a safety-critical railway inspection desktop application ensuring EN-13848 standard compliance. Defined installer workflows using Erlang OTP, RabbitMQ, and .NET Kestrel for European rail infrastructure.</div>
           <div class="work-tags">
             <span class="tag">Desktop App</span><span class="tag">Rail Tech</span><span class="tag">Switzerland</span><span class="tag tag-accent">Enterprise</span>
           </div>
         </div>
         <div class="work-card">
           <div class="work-num">02 — Platform</div>
-          <div class="work-title">CMS for SV Group — Europe-wide Restaurant Chain</div>
-          <div class="work-co">SELISE Digital Platforms</div>
+          <div class="work-title">CMS for <a href="https://sv-group.com/en" target="_blank" style="color:inherit;text-decoration:none;border-bottom:1px solid var(--border);">SV Group</a> — 100+ Restaurant Outlets</div>
+          <div class="work-co"><a href="https://selisegroup.com/" target="_blank">SELISE Digital Platforms</a></div>
           <div class="work-desc">Business analysis for a centralised CMS managing menus and content for 100+ restaurant outlets across Europe. Designed role-based permission matrices for marketing, branch, and editorial teams.</div>
-          <div class="work-tags">
-            <span class="tag">CMS</span><span class="tag">Europe</span><span class="tag">100+ Outlets</span>
-          </div>
+          <div class="work-tags"><span class="tag">CMS</span><span class="tag">Europe</span><span class="tag">100+ Outlets</span></div>
         </div>
         <div class="work-card">
           <div class="work-num">03 — OTT / Media</div>
-          <div class="work-title">Toffee Star Search — Banglalink OTT</div>
-          <div class="work-co">SELISE Digital Platforms × Banglalink</div>
+          <div class="work-title">Toffee Star Search — <a href="https://www.banglalink.net/" target="_blank" style="color:inherit;text-decoration:none;border-bottom:1px solid var(--border);">Banglalink</a> OTT</div>
+          <div class="work-co"><a href="https://selisegroup.com/" target="_blank">SELISE Digital Platforms</a> × Banglalink</div>
           <div class="work-desc">Defined requirements for the Toffee Star Search microsite supporting Banglalink's entry into the UGC space with multilingual content, SEO optimisation, and leaderboard integration.</div>
-          <div class="work-tags">
-            <span class="tag">OTT</span><span class="tag">UGC</span><span class="tag">Bangladesh</span>
-          </div>
+          <div class="work-tags"><span class="tag">OTT</span><span class="tag">UGC</span><span class="tag">Bangladesh</span></div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- SKILLS -->
   <section class="section" style="background:var(--surface);">
     <div class="container">
       <div class="overline fade-up" style="margin-bottom:10px;">Capabilities</div>
@@ -222,13 +206,15 @@
     </div>
   </section>
 
-  <!-- CTA -->
   <section class="section-sm">
     <div class="container">
       <div class="cta-band fade-up">
         <h2 class="display-md">Let's work together</h2>
         <p>Open to Senior BA, Product Owner, and Product Manager roles. Available for consulting engagements.</p>
-        <a href="mailto:nader.nehal0@gmail.com" class="btn btn-primary">Get in touch →</a>
+        <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;">
+          <a href="mailto:nader.nehal0@gmail.com" class="btn btn-primary">Get in touch →</a>
+          <a href="resume.pdf" class="resume-btn" download>⬇ Download Resume</a>
+        </div>
       </div>
     </div>
   </section>
@@ -241,6 +227,7 @@
       <div class="footer-links">
         <a href="mailto:nader.nehal0@gmail.com">Email</a>
         <a href="https://linkedin.com/in/nadernehal" target="_blank">LinkedIn</a>
+        <a href="https://github.com/nadernehal10" target="_blank">GitHub</a>
         <a href="about.html">About</a>
       </div>
       <span class="mono">Dhaka, Bangladesh</span>
@@ -248,30 +235,14 @@
   </div>
 </footer>
 
-<script src="site-content.js"></script>
 <script>
-// Theme
-const html = document.documentElement;
-const themeBtn = document.getElementById('theme-btn');
-const saved = localStorage.getItem('nn-theme');
-if(saved === 'dark') { html.dataset.theme = 'dark'; themeBtn.textContent = '🌙'; }
-themeBtn.addEventListener('click', () => {
-  const isDark = html.dataset.theme === 'dark';
-  html.dataset.theme = isDark ? '' : 'dark';
-  themeBtn.textContent = isDark ? '☀️' : '🌙';
-  localStorage.setItem('nn-theme', isDark ? 'light' : 'dark');
-});
-
-// Mobile menu
-const menuBtn = document.getElementById('menu-btn');
-const mobileMenu = document.getElementById('mobile-menu');
-menuBtn.addEventListener('click', () => mobileMenu.classList.toggle('open'));
-
-// Scroll animations
-const obs = new IntersectionObserver((entries) => {
-  entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('visible'); });
-}, { threshold: 0.1 });
-document.querySelectorAll('.fade-up').forEach(el => obs.observe(el));
+const html=document.documentElement,themeBtn=document.getElementById('theme-btn');
+const saved=localStorage.getItem('nn-theme');
+if(saved==='dark'){html.dataset.theme='dark';themeBtn.textContent='🌙';}
+themeBtn.addEventListener('click',()=>{const d=html.dataset.theme==='dark';html.dataset.theme=d?'':'dark';themeBtn.textContent=d?'☀️':'🌙';localStorage.setItem('nn-theme',d?'light':'dark');});
+document.getElementById('menu-btn').addEventListener('click',()=>document.getElementById('mobile-menu').classList.toggle('open'));
+const obs=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting)x.target.classList.add('visible');}),{threshold:0.1});
+document.querySelectorAll('.fade-up').forEach(el=>obs.observe(el));
 </script>
 </body>
 </html>
