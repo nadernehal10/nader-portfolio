@@ -4,255 +4,233 @@
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width,initial-scale=1"/>
 <title>Projects — Nader Nehal</title>
-<link rel="stylesheet" href="shared.css"/>
-<link rel="icon" type="image/png" sizes="32x32" href="favicon.png">
-<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin=""/>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,300;1,9..144,400&family=DM+Sans:wght@300;400;500&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet"/>
 <style>
-.filter-row{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:2.5rem;}
-.filter-btn{padding:7px 16px;border:1.5px solid var(--border);border-radius:99px;font-size:13px;color:var(--ink-2);background:transparent;cursor:pointer;transition:all 0.15s;font-family:var(--sans);}
-.filter-btn:hover{border-color:var(--border-2);color:var(--ink);}
-.filter-btn.active{background:var(--ink);color:white;border-color:var(--ink);}
-[data-theme="dark"] .filter-btn.active{background:var(--ink);color:var(--cream);}
-.projects-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:1.5rem;}
-.project-card{border:1px solid var(--border);border-radius:16px;overflow:hidden;background:var(--white);transition:all 0.2s;display:flex;flex-direction:column;}
-.project-card:hover{border-color:var(--border-2);transform:translateY(-2px);box-shadow:0 8px 32px rgba(0,0,0,0.06);}
-[data-theme="dark"] .project-card:hover{box-shadow:0 8px 32px rgba(0,0,0,0.2);}
-.project-img{width:100%;height:180px;object-fit:cover;background:var(--surface);display:flex;align-items:center;justify-content:center;color:var(--ink-4);font-size:13px;}
-.figma-wrap{position:relative;width:100%;padding-bottom:56.25%;height:0;overflow:hidden;background:var(--surface);border-bottom:1px solid var(--border);}
-.figma-wrap iframe{position:absolute;top:0;left:0;width:100%;height:100%;border:none;}
-.project-img img{width:100%;height:100%;object-fit:cover;object-position:top;cursor:zoom-in;transition:opacity 0.15s;} .project-img img:hover{opacity:0.85;}
-.project-body{padding:1.5rem;display:flex;flex-direction:column;gap:10px;flex:1;}
-.project-num{font-family:var(--mono);font-size:11px;color:var(--ink-4);}
-.project-title{font-family:var(--disp);font-size:1.05rem;font-weight:400;color:var(--ink);letter-spacing:-0.01em;line-height:1.3;}
-.project-co{font-size:12px;color:var(--accent);font-weight:500;}
-.project-co a{color:var(--accent);text-decoration:none;}
-.project-co a:hover{text-decoration:underline;}
-.project-desc{font-size:13.5px;color:var(--ink-2);line-height:1.7;flex:1;}
-.project-foot{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px;padding-top:12px;border-top:1px solid var(--border);}
-.project-tags{display:flex;gap:6px;flex-wrap:wrap;}
-.project-period{font-family:var(--mono);font-size:11px;color:var(--ink-4);}
-.lightbox{display:none;position:fixed;inset:0;z-index:1000;background:rgba(0,0,0,0.92);align-items:center;justify-content:center;padding:2rem;}
-.lightbox.open{display:flex;}
-.lightbox img{max-width:90vw;max-height:85vh;object-fit:contain;border-radius:8px;}
-.lightbox-close{position:absolute;top:1.2rem;right:1.5rem;font-size:1.8rem;color:white;cursor:pointer;background:none;border:none;line-height:1;opacity:0.7;}
-.lightbox-close:hover{opacity:1;}
+:root{--bg:#f5f7f4;--surface:#eef3ee;--card:#fff;--ink:#181e19;--ink-2:#404840;--ink-4:#788078;--border:#dde8dd;--border-2:#c4d4c4;--accent:#1a6b3c;--accent-soft:#eef6f1;--stage:#222;--disp:'Fraunces',Georgia,serif;--sans:'DM Sans',system-ui,sans-serif;--mono:'DM Mono',monospace}
+[data-theme="dark"]{--bg:#111612;--surface:#141a14;--card:#171d18;--ink:#e8f0e8;--ink-2:#a0b0a0;--ink-4:#7a8a7a;--border:#243024;--border-2:#304030;--accent:#2d9e56;--accent-soft:#0e1e12;--stage:#1b1b1b}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:16px;line-height:1.7;-webkit-font-smoothing:antialiased;transition:background .25s,color .25s}
+a{color:var(--accent);text-decoration:none}a:hover{text-decoration:underline}
+button{font:inherit;color:inherit;background:none;border:none;cursor:pointer}
+.container{max-width:1200px;margin:0 auto;padding:0 clamp(1.25rem,4vw,2.5rem)}
+.mono{font-family:var(--mono);font-size:11.5px;letter-spacing:.02em;color:var(--ink-4)}
+.overline{font-size:11px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--accent)}
+.tag{font-family:var(--mono);font-size:11px;padding:3px 9px;border-radius:99px;border:1px solid var(--border);color:var(--ink-2);white-space:nowrap}
+.tag-accent{border-color:transparent;background:var(--accent-soft);color:var(--accent)}
+/* nav */
+.nav{position:sticky;top:0;z-index:50;background:color-mix(in oklab,var(--bg) 88%,transparent);backdrop-filter:blur(12px);border-bottom:1px solid var(--border)}
+.nav-in{display:flex;align-items:center;justify-content:space-between;height:64px;gap:1rem}
+.nav-brand{font-family:var(--disp);font-size:1.1rem;font-weight:500;letter-spacing:-.01em;color:var(--ink)}.nav-brand span{color:var(--accent)}.nav-brand:hover{text-decoration:none}
+.nav-links{display:flex;gap:1.75rem}.nav-links a{font-size:13.5px;color:var(--ink-2)}.nav-links a.active{color:var(--ink);font-weight:500}.nav-links a:hover{color:var(--ink);text-decoration:none}
+.theme-btn{width:36px;height:36px;border-radius:50%;border:1px solid var(--border);display:grid;place-items:center}
+.theme-btn svg{width:16px;height:16px;stroke:var(--ink-2);fill:none;stroke-width:1.6}
+@media(max-width:640px){.nav-links{gap:1rem}.nav-links a{font-size:12.5px}}
+/* list */
+.page-head{padding:4.5rem 0 2.5rem;display:grid;gap:1rem}
+.display{font-family:var(--disp);font-weight:300;font-size:clamp(2.5rem,6vw,4.5rem);line-height:1.05;letter-spacing:-.03em}
+.lede{font-size:16px;color:var(--ink-2);max-width:540px;font-weight:300;text-wrap:pretty}
+.filter-row{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:2rem}
+.filter-btn{padding:7px 16px;border:1px solid var(--border);border-radius:99px;font-size:13px;color:var(--ink-2);transition:all .15s}
+.filter-btn:hover{border-color:var(--border-2);color:var(--ink)}
+.filter-btn.active{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,340px),1fr));gap:1.5rem;padding-bottom:5rem}
+.card{border:1px solid var(--border);border-radius:18px;overflow:hidden;background:var(--card);display:flex;flex-direction:column;cursor:pointer;transition:transform .25s,box-shadow .25s,border-color .25s;text-align:left}
+.card:hover{transform:translateY(-3px);border-color:var(--border-2);box-shadow:0 14px 40px rgba(0,0,0,.08)}
+.card.featured{grid-column:span 2}
+@media(max-width:760px){.card.featured{grid-column:auto}}
+.preview{position:relative;height:250px;overflow:hidden;border-bottom:1px solid var(--border)}
+.card.featured .preview{height:300px}
+.phones{position:absolute;inset:0;display:flex;justify-content:center;align-items:flex-start;gap:14px;padding-top:28px}
+.phones img{width:118px;height:auto;display:block;filter:drop-shadow(0 12px 22px rgba(0,0,0,.45));transition:transform .45s cubic-bezier(.2,.8,.2,1)}
+.card.featured .phones img{width:140px}
+.phones img:nth-child(2){margin-top:22px}.phones img:nth-child(3){margin-top:44px}
+.card:hover .phones img{transform:translateY(-12px)}
+.card:hover .phones img:nth-child(2){transform:translateY(-18px)}
+.card:hover .phones img:nth-child(3){transform:translateY(-24px)}
+.cover{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:space-between;padding:1.4rem 1.5rem}
+.cover-num{font-family:var(--disp);font-weight:300;font-size:5rem;line-height:.8;letter-spacing:-.04em;opacity:.9}
+.cover-client{font-family:var(--mono);font-size:11.5px;letter-spacing:.1em;text-transform:uppercase}
+.cover-lines{position:absolute;right:-20px;bottom:-20px;width:60%;height:80%;background:repeating-linear-gradient(135deg,currentColor 0 1px,transparent 1px 12px);opacity:.12}
+.badge{position:absolute;top:14px;right:14px;font-family:var(--mono);font-size:10.5px;padding:4px 10px;border-radius:99px;background:rgba(255,255,255,.12);color:#fff;backdrop-filter:blur(6px);border:1px solid rgba(255,255,255,.18);z-index:2}
+.hover-cta{position:absolute;left:14px;bottom:14px;font-size:12.5px;font-weight:500;padding:7px 13px;border-radius:99px;background:var(--card);color:var(--ink);opacity:0;transform:translateY(6px);transition:all .25s;z-index:2;box-shadow:0 4px 14px rgba(0,0,0,.15)}
+.card:hover .hover-cta{opacity:1;transform:none}
+.body{padding:1.35rem 1.5rem 1.4rem;display:flex;flex-direction:column;gap:8px;flex:1}
+.title{font-family:var(--disp);font-size:1.2rem;font-weight:400;line-height:1.3;letter-spacing:-.01em;color:var(--ink);text-wrap:balance}
+.co{font-size:12.5px;color:var(--accent);font-weight:500}
+.teaser{font-size:13.5px;color:var(--ink-2);line-height:1.65;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;flex:1;text-wrap:pretty}
+.foot{display:flex;justify-content:space-between;align-items:center;gap:8px;flex-wrap:wrap;padding-top:12px;margin-top:4px;border-top:1px solid var(--border)}
+.tags{display:flex;gap:6px;flex-wrap:wrap}
+/* detail */
+.detail{padding-top:2.5rem;padding-bottom:5rem}
+.back{display:inline-flex;align-items:center;gap:8px;font-size:13.5px;color:var(--ink-2);margin-bottom:2.5rem}.back:hover{color:var(--ink);text-decoration:none}
+.d-head{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:2rem;align-items:end;margin-bottom:2.5rem}
+@media(max-width:760px){.d-head{grid-template-columns:1fr}}
+.d-title{font-family:var(--disp);font-weight:300;font-size:clamp(2rem,4.5vw,3.5rem);line-height:1.1;letter-spacing:-.03em;margin:.75rem 0 1rem;text-wrap:balance}
+.d-co{font-size:14px;color:var(--ink-2)}.d-co a{font-weight:500}
+.d-period{font-family:var(--mono);font-size:12.5px;color:var(--ink-2);padding:8px 14px;border:1px solid var(--border);border-radius:99px;white-space:nowrap}
+.stage{position:relative;border-radius:20px;overflow:hidden;margin-bottom:3.5rem}
+.stage-phones{display:flex;gap:clamp(12px,3vw,40px);justify-content:center;padding:clamp(1.5rem,4vw,3rem);overflow-x:auto}
+.shot{flex:0 0 auto;display:flex;flex-direction:column;align-items:center;gap:12px;cursor:zoom-in}
+.shot img{height:clamp(300px,42vw,480px);width:auto;display:block;filter:drop-shadow(0 18px 30px rgba(0,0,0,.5));transition:transform .3s}
+.shot:hover img{transform:translateY(-6px) scale(1.01)}
+.shot span{font-family:var(--mono);font-size:11px;color:#bdbdbd}
+.stage .cover{position:relative;min-height:320px}
+.stage-hint{position:absolute;top:16px;left:18px;font-family:var(--mono);font-size:11px;color:#9a9a9a}
+.d-grid{display:grid;grid-template-columns:minmax(0,1fr) 300px;gap:clamp(2rem,5vw,5rem);align-items:start}
+@media(max-width:860px){.d-grid{grid-template-columns:1fr}}
+.d-sec{margin-bottom:3rem}
+.d-sec h2{font-family:var(--mono);font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-4);font-weight:400;margin-bottom:1rem}
+.d-overview{font-family:var(--disp);font-weight:300;font-size:clamp(1.3rem,2.2vw,1.65rem);line-height:1.45;letter-spacing:-.015em;text-wrap:pretty}
+.d-points{list-style:none;display:grid;gap:0}
+.d-points li{display:grid;grid-template-columns:44px 1fr;padding:1.1rem 0;border-top:1px solid var(--border);font-size:15px;color:var(--ink-2);line-height:1.7;text-wrap:pretty}
+.d-points li:last-child{border-bottom:1px solid var(--border)}
+.d-points li b{font-family:var(--mono);font-weight:400;font-size:12px;color:var(--accent);padding-top:3px}
+.proto{position:relative;width:100%;aspect-ratio:16/10;border-radius:16px;overflow:hidden;border:1px solid var(--border);background:var(--surface)}
+.proto iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.aside{position:sticky;top:90px;border:1px solid var(--border);border-radius:16px;background:var(--card);padding:1.5rem}
+.fact{padding:.85rem 0;border-bottom:1px solid var(--border);display:grid;gap:4px}
+.fact:first-child{padding-top:0}.fact:last-of-type{border-bottom:0}
+.fact dt{font-family:var(--mono);font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-4)}
+.fact dd{font-size:14px;color:var(--ink)}
+.aside .btn{display:flex;justify-content:center;margin-top:1rem;padding:11px;border-radius:99px;background:var(--accent);color:#fff;font-size:14px;font-weight:500}.aside .btn:hover{text-decoration:none;opacity:.9}
+.pager{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-top:1rem;padding-top:2rem;border-top:1px solid var(--border)}
+.pager button{text-align:left;padding:1.25rem 1.4rem;border:1px solid var(--border);border-radius:14px;background:var(--card);display:grid;gap:6px;transition:border-color .2s}
+.pager button:hover{border-color:var(--border-2)}
+.pager button.next{text-align:right}
+.pager .t{font-family:var(--disp);font-size:1.1rem;line-height:1.3;letter-spacing:-.01em}
+@media(max-width:640px){.pager{grid-template-columns:1fr}.pager button.next{text-align:left}}
+/* lightbox */
+.lb{position:fixed;inset:0;z-index:1000;background:rgba(10,10,10,.94);display:none;flex-direction:column;align-items:center;justify-content:center;gap:1rem;padding:2rem}
+.lb.open{display:flex}
+.lb img{max-width:min(90vw,700px);max-height:80vh;object-fit:contain}
+.lb-cap{font-family:var(--mono);font-size:12px;color:#c9c9c9;display:flex;gap:1rem}
+.lb-btn{position:absolute;width:48px;height:48px;border-radius:50%;border:1px solid rgba(255,255,255,.2);color:#fff;display:grid;place-items:center;font-size:20px}
+.lb-btn:hover{background:rgba(255,255,255,.08)}
+.lb-close{top:1.25rem;right:1.25rem}.lb-prev{left:1.25rem;top:50%;translate:0 -50%}.lb-next{right:1.25rem;top:50%;translate:0 -50%}
+.fade{animation:fade .45s cubic-bezier(.2,.8,.2,1) both}
+@keyframes fade{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+footer{border-top:1px solid var(--border);padding:2rem 0}
+.footer-in{display:flex;justify-content:space-between;align-items:center;gap:1rem;flex-wrap:wrap}
+.footer-links{display:flex;gap:1.5rem}.footer-links a{font-size:13px;color:var(--ink-2)}
 </style>
 </head>
 <body>
-<nav class="nav">
-  <a href="index.html" class="nav-brand">Nader <span>Nehal</span></a>
-  <div class="nav-links">
-    <a href="index.html">Home</a>
-    <a href="experience.html">Experience</a>
-    <a href="projects.html" class="active">Projects</a>
-    <a href="about.html">About</a>
-  </div>
-  <div class="nav-right">
-    <button class="theme-btn" id="theme-btn">☀️</button>
-    <button class="menu-btn" id="menu-btn"><span></span><span></span><span></span></button>
-  </div>
-</nav>
-<div class="mobile-menu" id="mobile-menu">
-  <a href="index.html">Home</a><a href="experience.html">Experience</a><a href="projects.html">Projects</a><a href="about.html">About</a>
-</div>
-
-<main>
-  <section class="section">
-    <div class="container">
-      <div class="overline fade-up" style="margin-bottom:12px;">Portfolio</div>
-      <h1 class="display-lg fade-up fade-up-1" style="margin-bottom:1rem;">Projects</h1>
-      <p class="fade-up fade-up-2" style="font-size:15px;color:var(--ink-2);max-width:520px;margin-bottom:2.5rem;font-weight:300;">Products and platforms I've contributed to across enterprise software, media, logistics, sustainability, and pharma.</p>
-
-      <div class="filter-row fade-up fade-up-3">
-        <button class="filter-btn active" data-filter="all">All</button>
-        <button class="filter-btn" data-filter="enterprise">Enterprise</button>
-        <button class="filter-btn" data-filter="platform">Platform</button>
-        <button class="filter-btn" data-filter="media">Media</button>
-        <button class="filter-btn" data-filter="logistics">Logistics</button>
-        <button class="filter-btn" data-filter="sustainability">Sustainability</button>
-        <button class="filter-btn" data-filter="pharma">Pharma</button>
-      </div>
-
-      <div class="projects-grid" id="projects-grid">
-
-        <!-- Amberg Track Pro -->
-        <div class="project-card fade-up" data-cat="enterprise">
-          <div class="project-img"><img src="amberg1.jpeg" alt="Amberg Track Pro Field App" loading="lazy"/></div>
-          <div class="project-body">
-            <div class="project-num">01 — Enterprise Software</div>
-            <div class="project-title">Amberg Track Pro — Railway Inspection Platform</div>
-            <div class="project-co"><a href="https://selisegroup.com/" target="_blank">SELISE Digital Platforms</a> × <a href="https://ambergtechnologies.com/" target="_blank">Amberg Technologies</a></div>
-            <div class="project-desc">Part of the core team from Sprint 1, contributing to the complete product lifecycle of a safety-critical railway inspection desktop application. Defined workflows and user stories for a chromium-based app installer built using Advanced Installer bundling Erlang OTP, RabbitMQ, .NET (Kestrel), Redis, Node.js, and MongoDB, ensuring EN-13848 standard compliance.</div>
-            <div class="project-foot">
-              <div class="project-tags"><span class="tag">Desktop App</span><span class="tag">Rail Tech</span><span class="tag tag-accent">EN-13848</span></div>
-              <div class="project-period">Jul 2021 – Jun 2024</div>
-            </div>
-          </div>
-        </div>
-
-        <!-- SV Group CMS -->
-        <div class="project-card fade-up fade-up-1" data-cat="platform">
-          <div class="project-img" style="background:var(--surface);padding:1.5rem;">
-            <div style="width:100%;height:100%;display:flex;align-items:center;justify-content:center;font-size:2.5rem;opacity:0.3;">🍽</div>
-          </div>
-          <div class="project-body">
-            <div class="project-num">02 — Platform · CMS</div>
-            <div class="project-title">CMS for SV Group — Europe-wide Restaurant Chain</div>
-            <div class="project-co"><a href="https://selisegroup.com/" target="_blank">SELISE Digital Platforms</a> × <a href="https://sv-group.com/en" target="_blank">SV Group</a></div>
-            <div class="project-desc">Led business analysis for a centralised Content Management System managing menus and content for 100+ restaurant outlets across Europe. Designed role-based permission matrices for marketing managers, branch managers, and editors. Enabled real-time microsite generation and deployment for individual outlets.</div>
-            <div class="project-foot">
-              <div class="project-tags"><span class="tag">CMS</span><span class="tag">100+ Outlets</span><span class="tag">Europe</span></div>
-              <div class="project-period">Jul 2022 – Jun 2023</div>
-            </div>
-          </div>
-        </div>
-
-        <!-- SV OTW -->
-        <div class="project-card fade-up fade-up-2" data-cat="sustainability">
-          <div class="project-img" style="background:var(--surface);padding:1.5rem;">
-            <div style="width:100%;height:100%;display:flex;align-items:center;justify-content:center;font-size:2.5rem;opacity:0.3;">♻️</div>
-          </div>
-          <div class="project-body">
-            <div class="project-num">03 — Sustainability Tool</div>
-            <div class="project-title">SV OTW — Sustainability Management Tool</div>
-            <div class="project-co"><a href="https://selisegroup.com/" target="_blank">SELISE Digital Platforms</a> × <a href="https://sv-group.com/en" target="_blank">SV Group</a></div>
-            <div class="project-desc">Analysed and designed an internal web-based tool to track and evaluate daily food purchases and wastage across outlets. Enabled branches to log sustainability activities and generate reports aligned with SV's corporate responsibility goals.</div>
-            <div class="project-foot">
-              <div class="project-tags"><span class="tag">Web Tool</span><span class="tag">Sustainability</span></div>
-              <div class="project-period">Oct 2022 – Jan 2023</div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Toffee Star Search -->
-        <div class="project-card fade-up" data-cat="media">
-          <div class="project-img" style="background:var(--surface);padding:1.5rem;">
-            <div style="width:100%;height:100%;display:flex;align-items:center;justify-content:center;font-size:2.5rem;opacity:0.3;">📺</div>
-          </div>
-          <div class="project-body">
-            <div class="project-num">04 — OTT / Media</div>
-            <div class="project-title">Toffee Star Search — Banglalink OTT Platform</div>
-            <div class="project-co"><a href="https://selisegroup.com/" target="_blank">SELISE Digital Platforms</a> × <a href="https://www.banglalink.net/" target="_blank">Banglalink</a></div>
-            <div class="project-desc">Gathered and documented requirements for the Toffee Star Search microsite supporting Banglalink's entry into the UGC space. Delivered support for multilingual content, SEO optimisation, and leaderboard integration for user-generated content.</div>
-            <div class="project-foot">
-              <div class="project-tags"><span class="tag">OTT</span><span class="tag">UGC</span><span class="tag">Multilingual</span></div>
-              <div class="project-period">May 2022 – Jul 2022</div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Repair Management -->
-        <div class="project-card fade-up fade-up-1" data-cat="platform">
-          <div class="figma-wrap">
-            <iframe src="https://embed.figma.com/proto/313lKf1l3vdFp1kLsfV4Cg/Service-7000-%7Bpitch%7D?node-id=135-5265&page-id=12%3A102&starting-point-node-id=132%3A4981&embed-host=share" allowfullscreen></iframe>
-          </div>
-          <div class="project-body">
-            <div class="project-num">05 — SaaS Platform</div>
-            <div class="project-title">Repair Management Platform — Service7000 AG</div>
-            <div class="project-co"><a href="https://selisegroup.com/" target="_blank">SELISE Digital Platforms</a> × <a href="http://www.service7000.ch" target="_blank">Service7000 AG</a></div>
-            <div class="project-desc">Spearheaded business analysis for a repair and service request management system for tenants, caretakers, and apartment owners. Evaluated and optimised a non-scalable route optimisation algorithm originally developed by a university faculty to support real-world deployment for scalable multi-route scheduling.</div>
-            <div class="project-foot">
-              <div class="project-tags"><span class="tag">SaaS</span><span class="tag">Route Optimisation</span></div>
-              <div class="project-period">Dec 2022 – Jun 2024</div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Swiss Leaders SKO -->
-        <div class="project-card fade-up fade-up-2" data-cat="platform">
-          <div class="project-img" style="background:var(--surface);padding:1.5rem;">
-            <div style="width:100%;height:100%;display:flex;align-items:center;justify-content:center;font-size:2.5rem;opacity:0.3;">🏛</div>
-          </div>
-          <div class="project-body">
-            <div class="project-num">06 — Professional Certification Platform</div>
-            <div class="project-title">Swiss Leaders (SKO) — Professional Exams Platform</div>
-            <div class="project-co"><a href="https://selisegroup.com/" target="_blank">SELISE Digital Platforms</a> × <a href="https://www.swissleaders.ch/?_locale=en" target="_blank">Swiss Leaders</a></div>
-            <div class="project-desc">Contributed to a digital platform for Swiss Leaders (formerly SKO — Schweizer Kader Organisation), Switzerland's leading professional association for managers and executives since 1893 with 10,000+ members. The platform supports their professional certification and leadership examination processes for Swiss executives, covering areas such as leadership competency assessment, career development, and professional qualification tracking for Swiss managers across industries.</div>
-            <div class="project-foot">
-              <div class="project-tags"><span class="tag">EdTech</span><span class="tag">Certification</span><span class="tag">Switzerland</span></div>
-              <div class="project-period">2021 – 2024</div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Last Mile Distribution -->
-        <div class="project-card fade-up" data-cat="logistics">
-          <div class="project-img" style="background:var(--surface);padding:1.5rem;">
-            <div style="width:100%;height:100%;display:flex;align-items:center;justify-content:center;font-size:2.5rem;opacity:0.3;">🚚</div>
-          </div>
-          <div class="project-body">
-            <div class="project-num">07 — B2B SaaS · Logistics</div>
-            <div class="project-title">Last-Mile Distribution Application</div>
-            <div class="project-co">Field Information Solutions Ltd.</div>
-            <div class="project-desc">Developed features for a B2B SaaS application ensuring last-mile distribution across Bangladesh. Identified potential customers, facilitated onboarding, communicated with end users to identify pain points, and groomed product backlog for sprint readiness.</div>
-            <div class="project-foot">
-              <div class="project-tags"><span class="tag">B2B SaaS</span><span class="tag">Logistics</span><span class="tag">Bangladesh</span></div>
-              <div class="project-period">Apr 2020 – Jul 2021</div>
-            </div>
-          </div>
-        </div>
-
-        <!-- AKS Khan Pharma -->
-        <div class="project-card fade-up fade-up-1" data-cat="pharma">
-          <div class="project-img" style="background:var(--surface);padding:1.5rem;">
-            <div style="width:100%;height:100%;display:flex;align-items:center;justify-content:center;font-size:2.5rem;opacity:0.3;">💊</div>
-          </div>
-          <div class="project-body">
-            <div class="project-num">08 — Pharma · Sales Operations</div>
-            <div class="project-title">Sales & Distribution Operations — AKS Khan Pharma</div>
-            <div class="project-co">AKS Khan Pharmaceuticals Ltd.</div>
-            <div class="project-desc">Managed sales operations across 13 outlets nationwide with 150+ employees. Analysed product portfolios evaluating growth trends and overhead costs, monitored customer tracking metrics, and coordinated distribution channel strategies across Bangladesh.</div>
-            <div class="project-foot">
-              <div class="project-tags"><span class="tag">Pharma</span><span class="tag">Sales Ops</span><span class="tag">150+ Staff</span></div>
-              <div class="project-period">May 2018 – Mar 2020</div>
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-</main>
-
-<footer class="footer">
-  <div class="container">
-    <div class="footer-inner">
-      <span class="footer-name">Nader Nehal</span>
-      <div class="footer-links">
-        <a href="mailto:nader.nehal0@gmail.com">Email</a>
-        <a href="https://linkedin.com/in/nadernehal" target="_blank">LinkedIn</a>
-        <a href="https://github.com/nadernehal10" target="_blank">GitHub</a>
-      </div>
-      <span class="mono">Dhaka, Bangladesh</span>
-    </div>
-  </div>
-</footer>
-<div class="lightbox" id="lightbox"><button class="lightbox-close" id="lightbox-close">✕</button><img id="lightbox-img" src="" alt=""/></div>
+<nav class="nav"><div class="container nav-in">
+<a href="index.html" class="nav-brand">Nader <span>Nehal</span></a>
+<div class="nav-links"><a href="index.html">Home</a><a href="experience.html">Experience</a><a href="#/" class="active">Projects</a><a href="about.html">About</a></div>
+<button class="theme-btn" id="theme-btn" aria-label="Toggle theme"><svg viewBox="0 0 24 24"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"></path></svg></button>
+</div></nav>
+<main id="app"></main>
+<footer><div class="container footer-in">
+<span class="nav-brand" style="font-weight:400;color:var(--ink-2)">Nader <span>Nehal</span></span>
+<div class="footer-links"><a href="mailto:nader.nehal0@gmail.com">Email</a><a href="https://linkedin.com/in/nadernehal" target="_blank">LinkedIn</a><a href="https://github.com/nadernehal10" target="_blank">GitHub</a></div>
+<span class="mono">Dhaka, Bangladesh</span>
+</div></footer>
+<div class="lb" id="lb"><button class="lb-btn lb-close" data-lb="close" aria-label="Close">✕</button><button class="lb-btn lb-prev" data-lb="prev" aria-label="Previous">←</button><img id="lb-img" alt=""/><div class="lb-cap"><span id="lb-cap"></span><span id="lb-count"></span></div><button class="lb-btn lb-next" data-lb="next" aria-label="Next">→</button></div>
 <script>
-const html=document.documentElement,themeBtn=document.getElementById('theme-btn');
-if(localStorage.getItem('nn-theme')==='dark'){html.dataset.theme='dark';themeBtn.textContent='🌙';}
-themeBtn.addEventListener('click',()=>{const d=html.dataset.theme==='dark';html.dataset.theme=d?'':'dark';themeBtn.textContent=d?'☀️':'🌙';localStorage.setItem('nn-theme',d?'light':'dark');});
-document.getElementById('menu-btn').addEventListener('click',()=>document.getElementById('mobile-menu').classList.toggle('open'));
-const obs=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting)x.target.classList.add('visible');}),{threshold:0.1});
-document.querySelectorAll('.fade-up').forEach(el=>obs.observe(el));
-document.querySelectorAll('.filter-btn').forEach(btn=>{
-  btn.addEventListener('click',()=>{
-    document.querySelectorAll('.filter-btn').forEach(b=>b.classList.remove('active'));
-    btn.classList.add('active');
-    const f=btn.dataset.filter;
-    document.querySelectorAll('.project-card').forEach(c=>{
-      c.style.display=(f==='all'||c.dataset.cat===f)?'flex':'none';
-    });
-  });
+const SELISE='<a href="https://selisegroup.com/" target="_blank">SELISE Digital Platforms</a>';
+const P=[
+{id:'amberg',cat:'enterprise',label:'Enterprise Software',hue:230,title:'Amberg Track Pro — Railway Inspection Platform',co:SELISE+' × <a href="https://ambergtechnologies.com/" target="_blank">Amberg Technologies</a>',employer:'SELISE Digital Platforms',client:'Amberg Technologies',period:'Jul 2021 – Jun 2024',tags:['Desktop App','Rail Tech'],accentTag:'EN-13848',
+overview:'Part of the core team from Sprint 1, contributing to the complete product lifecycle of a safety-critical railway inspection desktop application.',
+points:['Defined workflows and user stories for a chromium-based app installer built using Advanced Installer bundling Erlang OTP, RabbitMQ, .NET (Kestrel), Redis, Node.js, and MongoDB, ensuring EN-13848 standard compliance.'],images:[]},
+{id:'sv-cms',cat:'platform',label:'Platform · CMS',hue:25,title:'CMS for SV Group — Europe-wide Restaurant Chain',co:SELISE+' × <a href="https://sv-group.com/en" target="_blank">SV Group</a>',employer:'SELISE Digital Platforms',client:'SV Group',period:'Jul 2022 – Jun 2023',tags:['CMS','100+ Outlets','Europe'],
+overview:'Led business analysis for a centralised Content Management System managing menus and content for 100+ restaurant outlets across Europe.',
+points:['Designed role-based permission matrices for marketing managers, branch managers, and editors.','Enabled real-time microsite generation and deployment for individual outlets.'],images:[]},
+{id:'sv-otw',cat:'sustainability',label:'Sustainability Tool',hue:150,title:'SV OTW — Sustainability Management Tool',co:SELISE+' × <a href="https://sv-group.com/en" target="_blank">SV Group</a>',employer:'SELISE Digital Platforms',client:'SV Group',period:'Oct 2022 – Jan 2023',tags:['Web Tool','Sustainability'],
+overview:'Analysed and designed an internal web-based tool to track and evaluate daily food purchases and wastage across outlets.',
+points:['Enabled branches to log sustainability activities and generate reports aligned with SV\'s corporate responsibility goals.'],images:[]},
+{id:'toffee',cat:'media',label:'OTT / Media',hue:330,title:'Toffee Star Search — Banglalink OTT Platform',co:SELISE+' × <a href="https://www.banglalink.net/" target="_blank">Banglalink</a>',employer:'SELISE Digital Platforms',client:'Banglalink',period:'May 2022 – Jul 2022',tags:['OTT','UGC','Multilingual'],
+overview:'Gathered and documented requirements for the Toffee Star Search microsite supporting Banglalink\'s entry into the UGC space.',
+points:['Delivered support for multilingual content, SEO optimisation, and leaderboard integration for user-generated content.'],images:[]},
+{id:'service7000',cat:'platform',label:'SaaS Platform',hue:255,featured:true,title:'Repair Management Platform — Service7000 AG',co:SELISE+' × <a href="http://www.service7000.ch" target="_blank">Service7000 AG</a>',employer:'SELISE Digital Platforms',client:'Service7000 AG',period:'Dec 2022 – Jun 2024',tags:['SaaS','Route Optimisation'],
+overview:'Spearheaded business analysis for a repair and service request management system for tenants, caretakers, and apartment owners.',
+points:['Evaluated and optimised a non-scalable route optimisation algorithm originally developed by a university faculty to support real-world deployment for scalable multi-route scheduling.'],
+images:[{src:'assets/s7000-welcome.png',cap:'Request portal — role selection'},{src:'assets/s7000-create-request.png',cap:'Create request — QR code entry'}],
+figma:'https://embed.figma.com/proto/313lKf1l3vdFp1kLsfV4Cg/Service-7000-%7Bpitch%7D?node-id=135-5265&page-id=12%3A102&starting-point-node-id=132%3A4981&embed-host=share'},
+{id:'swiss-leaders',cat:'platform',label:'Professional Certification Platform',hue:5,title:'Swiss Leaders (SKO) — Professional Exams Platform',co:SELISE+' × <a href="https://www.swissleaders.ch/?_locale=en" target="_blank">Swiss Leaders</a>',employer:'SELISE Digital Platforms',client:'Swiss Leaders',period:'2021 – 2024',tags:['EdTech','Certification','Switzerland'],
+overview:'Contributed to a digital platform for Swiss Leaders (formerly SKO — Schweizer Kader Organisation), Switzerland\'s leading professional association for managers and executives since 1893 with 10,000+ members.',
+points:['The platform supports their professional certification and leadership examination processes for Swiss executives, covering areas such as leadership competency assessment, career development, and professional qualification tracking for Swiss managers across industries.'],images:[]},
+{id:'last-mile',cat:'logistics',label:'B2B SaaS · Logistics',hue:60,title:'Last-Mile Distribution Application',co:'Field Information Solutions Ltd.',employer:'Field Information Solutions Ltd.',client:'—',period:'Apr 2020 – Jul 2021',tags:['B2B SaaS','Logistics','Bangladesh'],
+overview:'Developed features for a B2B SaaS application ensuring last-mile distribution across Bangladesh.',
+points:['Identified potential customers, facilitated onboarding, communicated with end users to identify pain points, and groomed product backlog for sprint readiness.'],images:[]},
+{id:'aks-khan',cat:'pharma',label:'Pharma · Sales Operations',hue:190,title:'Sales & Distribution Operations — AKS Khan Pharma',co:'AKS Khan Pharmaceuticals Ltd.',employer:'AKS Khan Pharmaceuticals Ltd.',client:'—',period:'May 2018 – Mar 2020',tags:['Pharma','Sales Ops','150+ Staff'],
+overview:'Managed sales operations across 13 outlets nationwide with 150+ employees.',
+points:['Analysed product portfolios evaluating growth trends and overhead costs, monitored customer tracking metrics, and coordinated distribution channel strategies across Bangladesh.'],images:[]}
+];
+const FILTERS=[['all','All'],['enterprise','Enterprise'],['platform','Platform'],['media','Media'],['logistics','Logistics'],['sustainability','Sustainability'],['pharma','Pharma']];
+const app=document.getElementById('app');let filter='all';
+const num=i=>String(i+1).padStart(2,'0');
+const dark=()=>document.documentElement.dataset.theme==='dark';
+const coverBg=h=>dark()?`oklch(0.26 0.04 ${h})`:`oklch(0.92 0.04 ${h})`;
+const coverInk=h=>dark()?`oklch(0.85 0.06 ${h})`:`oklch(0.38 0.08 ${h})`;
+const tagsHtml=p=>p.tags.map(t=>`<span class="tag">${t}</span>`).join('')+(p.accentTag?`<span class="tag tag-accent">${p.accentTag}</span>`:'');
+function cover(p,i){return `<div class="cover" style="background:${coverBg(p.hue)};color:${coverInk(p.hue)}"><div class="cover-lines"></div><div class="cover-client">${p.client!=='—'?p.client:p.employer}</div><div class="cover-num">${num(i)}</div></div>`}
+function preview(p,i){
+ if(!p.images.length)return `<div class="preview">${cover(p,i)}<span class="hover-cta">View project →</span></div>`;
+ const shown=p.images.slice(0,p.featured?3:2);
+ return `<div class="preview" style="background:var(--stage)"><span class="badge">${p.images.length} screens</span><div class="phones">${shown.map(im=>`<img src="${im.src}" alt="${im.cap}" loading="lazy"/>`).join('')}</div><span class="hover-cta">View project →</span></div>`}
+function renderList(){
+ const list=P.map((p,i)=>({p,i})).filter(x=>filter==='all'||x.p.cat===filter);
+ app.innerHTML=`<div class="container">
+ <header class="page-head fade"><div class="overline">Portfolio</div><h1 class="display">Projects</h1><p class="lede">Products and platforms I've contributed to across enterprise software, media, logistics, sustainability, and pharma.</p></header>
+ <div class="filter-row">${FILTERS.map(([k,l])=>`<button class="filter-btn${k===filter?' active':''}" data-filter="${k}">${l}</button>`).join('')}</div>
+ <div class="grid">${list.map(({p,i},n)=>`<article class="card fade${p.featured&&filter==='all'?' featured':''}" style="animation-delay:${n*50}ms" data-open="${p.id}" tabindex="0" role="link" aria-label="${p.title}">
+ ${preview(p,i)}
+ <div class="body"><div class="mono">${num(i)} — ${p.label}</div><h3 class="title">${p.title}</h3><div class="co">${p.co}</div><p class="teaser">${p.overview}</p>
+ <div class="foot"><div class="tags">${tagsHtml(p)}</div><span class="mono">${p.period}</span></div></div></article>`).join('')}</div></div>`;
+}
+function renderDetail(id){
+ const i=P.findIndex(p=>p.id===id);if(i<0)return go('');
+ const p=P[i],prev=P[(i-1+P.length)%P.length],next=P[(i+1)%P.length];
+ const stage=p.images.length
+  ?`<div class="stage fade" style="background:var(--stage)"><span class="stage-hint">Click a screen to enlarge</span><div class="stage-phones">${p.images.map((im,k)=>`<figure class="shot" data-shot="${k}"><img src="${im.src}" alt="${im.cap}"/><span>${im.cap}</span></figure>`).join('')}</div></div>`
+  :`<div class="stage fade">${cover(p,i)}</div>`;
+ app.innerHTML=`<div class="container detail">
+ <a class="back" href="#/">← All projects</a>
+ <header class="d-head fade"><div><div class="overline">${num(i)} — ${p.label}</div><h1 class="d-title">${p.title}</h1><div class="d-co">${p.co}</div></div><span class="d-period">${p.period}</span></header>
+ ${stage}
+ <div class="d-grid"><div>
+ <section class="d-sec"><h2>Overview</h2><p class="d-overview">${p.overview}</p></section>
+ <section class="d-sec"><h2>What I did</h2><ul class="d-points">${p.points.map((t,k)=>`<li><b>${num(k)}</b><span>${t}</span></li>`).join('')}</ul></section>
+ ${p.figma?`<section class="d-sec"><h2>Interactive prototype</h2><div class="proto"><iframe src="${p.figma}" allowfullscreen="" loading="lazy"></iframe></div></section>`:''}
+ </div>
+ <aside class="aside"><dl>
+ <div class="fact"><dt>Period</dt><dd>${p.period}</dd></div>
+ <div class="fact"><dt>Employer</dt><dd>${p.employer}</dd></div>
+ ${p.client!=='—'?`<div class="fact"><dt>Client</dt><dd>${p.client}</dd></div>`:''}
+ <div class="fact"><dt>Domain</dt><dd>${p.label}</dd></div>
+ <div class="fact"><dt>Tags</dt><dd class="tags" style="margin-top:4px">${tagsHtml(p)}</dd></div>
+ </dl><a class="btn" href="experience.html">View in Experience →</a></aside></div>
+ <nav class="pager"><button data-open="${prev.id}"><span class="mono">← Previous</span><span class="t">${prev.title}</span></button><button class="next" data-open="${next.id}"><span class="mono">Next →</span><span class="t">${next.title}</span></button></nav>
+ </div>`;
+ window.scrollTo(0,0);
+}
+function go(id){location.hash=id?'#/project/'+id:'#/'}
+function route(){const m=location.hash.match(/^#\/project\/(.+)$/);m?renderDetail(m[1]):(renderList())}
+window.addEventListener('hashchange',route);
+app.addEventListener('click',e=>{
+ if(e.target.closest('a'))return;
+ const f=e.target.closest('[data-filter]');if(f){filter=f.dataset.filter;renderList();return}
+ const s=e.target.closest('[data-shot]');if(s){openLb(+s.dataset.shot);return}
+ const o=e.target.closest('[data-open]');if(o)go(o.dataset.open);
 });
-const lb=document.getElementById('lightbox');
-const lbImg=document.getElementById('lightbox-img');
-document.querySelectorAll('.project-img img').forEach(img=>{
-  img.addEventListener('click',()=>{lbImg.src=img.src;lbImg.alt=img.alt;lb.classList.add('open');document.body.style.overflow='hidden';});
-});
-document.getElementById('lightbox-close').addEventListener('click',()=>{lb.classList.remove('open');document.body.style.overflow='';});
-lb.addEventListener('click',e=>{if(e.target===lb){lb.classList.remove('open');document.body.style.overflow='';}});
-document.addEventListener('keydown',e=>{if(e.key==='Escape'){lb.classList.remove('open');document.body.style.overflow='';}});
+app.addEventListener('keydown',e=>{if(e.key==='Enter'){const o=e.target.closest('[data-open]');if(o)go(o.dataset.open)}});
+// lightbox
+const lb=document.getElementById('lb');let lbIdx=0;
+const curImgs=()=>{const m=location.hash.match(/^#\/project\/(.+)$/);return m?(P.find(p=>p.id===m[1])||{images:[]}).images:[]};
+function showLb(){const im=curImgs();if(!im.length)return;lbIdx=(lbIdx+im.length)%im.length;document.getElementById('lb-img').src=im[lbIdx].src;document.getElementById('lb-cap').textContent=im[lbIdx].cap;document.getElementById('lb-count').textContent=`${lbIdx+1} / ${im.length}`}
+function openLb(k){lbIdx=k;showLb();lb.classList.add('open');document.body.style.overflow='hidden'}
+function closeLb(){lb.classList.remove('open');document.body.style.overflow=''}
+lb.addEventListener('click',e=>{const a=e.target.closest('[data-lb]');if(a){a.dataset.lb==='close'?closeLb():(lbIdx+=a.dataset.lb==='next'?1:-1,showLb())}else if(e.target===lb)closeLb()});
+document.addEventListener('keydown',e=>{if(!lb.classList.contains('open'))return;if(e.key==='Escape')closeLb();if(e.key==='ArrowRight'){lbIdx++;showLb()}if(e.key==='ArrowLeft'){lbIdx--;showLb()}});
+// theme
+const html=document.documentElement;
+if(localStorage.getItem('nn-theme')==='dark')html.dataset.theme='dark';
+document.getElementById('theme-btn').addEventListener('click',()=>{const d=dark();html.dataset.theme=d?'':'dark';localStorage.setItem('nn-theme',d?'light':'dark');route()});
+route();
 </script>
 </body>
 </html>
