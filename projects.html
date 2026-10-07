@@ -4,6 +4,7 @@
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width,initial-scale=1"/>
 <title>Projects — Nader Nehal</title>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%231a6b3c'/><text x='16' y='23' font-family='Georgia,serif' font-size='20' font-weight='300' fill='white' text-anchor='middle'>N</text></svg>"/>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin=""/>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,300;1,9..144,400&family=DM+Sans:wght@300;400;500&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet"/>
@@ -135,13 +136,16 @@ const SELISE='<a href="https://selisegroup.com/" target="_blank">SELISE Digital 
 const P=[
 {id:'amberg',cat:'enterprise',label:'Enterprise Software',hue:230,title:'Amberg Track Pro — Railway Inspection Platform',co:SELISE+' × <a href="https://ambergtechnologies.com/" target="_blank">Amberg Technologies</a>',employer:'SELISE Digital Platforms',client:'Amberg Technologies',period:'Jul 2021 – Jun 2024',tags:['Desktop App','Rail Tech'],accentTag:'EN-13848',
 overview:'Part of the core team from Sprint 1, contributing to the complete product lifecycle of a safety-critical railway inspection desktop application.',
-points:['Defined workflows and user stories for a chromium-based app installer built using Advanced Installer bundling Erlang OTP, RabbitMQ, .NET (Kestrel), Redis, Node.js, and MongoDB, ensuring EN-13848 standard compliance.'],images:[]},
+points:['Defined workflows and user stories for a chromium-based app installer built using Advanced Installer bundling Erlang OTP, RabbitMQ, .NET (Kestrel), Redis, Node.js, and MongoDB, ensuring EN-13848 standard compliance.','Contributed to defect detection and measurement data analysis workflows, including chart visualisation, defect filtering, and track localisation views.'],
+images:[{src:'assets/amberg-measurement.png',cap:'Measurement view — defect charts & track data'},{src:'assets/amberg-filter.png',cap:'Filter panel — severity & defect type selection'}]},
 {id:'sv-cms',cat:'platform',label:'Platform · CMS',hue:25,title:'CMS for SV Group — Europe-wide Restaurant Chain',co:SELISE+' × <a href="https://sv-group.com/en" target="_blank">SV Group</a>',employer:'SELISE Digital Platforms',client:'SV Group',period:'Jul 2022 – Jun 2023',tags:['CMS','100+ Outlets','Europe'],
 overview:'Led business analysis for a centralised Content Management System managing menus and content for 100+ restaurant outlets across Europe.',
 points:['Designed role-based permission matrices for marketing managers, branch managers, and editors.','Enabled real-time microsite generation and deployment for individual outlets.'],images:[]},
 {id:'sv-otw',cat:'sustainability',label:'Sustainability Tool',hue:150,title:'SV OTW — Sustainability Management Tool',co:SELISE+' × <a href="https://sv-group.com/en" target="_blank">SV Group</a>',employer:'SELISE Digital Platforms',client:'SV Group',period:'Oct 2022 – Jan 2023',tags:['Web Tool','Sustainability'],
 overview:'Analysed and designed an internal web-based tool to track and evaluate daily food purchases and wastage across outlets.',
-points:['Enabled branches to log sustainability activities and generate reports aligned with SV\'s corporate responsibility goals.'],images:[]},
+points:['Designed role-based workflows for branch managers and marketing editors to log sustainability activities.','Enabled real-time data entry and automated reporting aligned with SV\'s corporate sustainability goals.'],
+images:[{src:'assets/sv-otw-login.png',cap:'Login — ONE TWO WE portal'},{src:'assets/sv-otw-restaurants.png',cap:'Restaurants overview — client & outlet list'},{src:'assets/sv-otw-audit.png',cap:'Audit view — measures & relevance scoring'}],
+figma:'https://embed.figma.com/proto/bzbmTTEOh8J8ZNTjnAqBxx/SV--Group--pitch-?node-id=250-6667&p=f&viewport=286%2C413%2C0.03&scaling=min-zoom&content-scaling=fixed&starting-point-node-id=603%3A6451&page-id=116%3A3768&embed-host=share'},
 {id:'toffee',cat:'media',label:'OTT / Media',hue:330,title:'Toffee Star Search — Banglalink OTT Platform',co:SELISE+' × <a href="https://www.banglalink.net/" target="_blank">Banglalink</a>',employer:'SELISE Digital Platforms',client:'Banglalink',period:'May 2022 – Jul 2022',tags:['OTT','UGC','Multilingual'],
 overview:'Gathered and documented requirements for the Toffee Star Search microsite supporting Banglalink\'s entry into the UGC space.',
 points:['Delivered support for multilingual content, SEO optimisation, and leaderboard integration for user-generated content.'],images:[]},
@@ -158,9 +162,18 @@ overview:'Developed features for a B2B SaaS application ensuring last-mile distr
 points:['Identified potential customers, facilitated onboarding, communicated with end users to identify pain points, and groomed product backlog for sprint readiness.'],images:[]},
 {id:'aks-khan',cat:'pharma',label:'Pharma · Sales Operations',hue:190,title:'Sales & Distribution Operations — AKS Khan Pharma',co:'AKS Khan Pharmaceuticals Ltd.',employer:'AKS Khan Pharmaceuticals Ltd.',client:'—',period:'May 2018 – Mar 2020',tags:['Pharma','Sales Ops','150+ Staff'],
 overview:'Managed sales operations across 13 outlets nationwide with 150+ employees.',
-points:['Analysed product portfolios evaluating growth trends and overhead costs, monitored customer tracking metrics, and coordinated distribution channel strategies across Bangladesh.'],images:[]}
+points:['Analysed product portfolios evaluating growth trends and overhead costs, monitored customer tracking metrics, and coordinated distribution channel strategies across Bangladesh.'],images:[]},
+{id:'kanuschule',cat:'pitch',label:'Pre-Sales Pitch',hue:45,title:'Kanuschule — Digital Platform Pitch',co:'SELISE Digital Platforms',employer:'SELISE Digital Platforms',client:'Kanuschule',period:'2023',tags:['Pre-Sales','Pitch','Sports'],
+overview:'Contributed to a pre-sales pitch for a digital platform for Kanuschule, scoping product requirements and presenting an interactive prototype to the client.',
+points:['Worked at the pre-sales stage to define platform scope, user journeys, and feature set.','Presented an interactive Figma prototype to demonstrate the proposed solution to the client.'],
+images:[],
+figma:'https://embed.figma.com/proto/SMKRmT0thCU6tVQjZP1SHo/-Pitch--Kanuschule?node-id=122674-78741&page-id=122674%3A76190&starting-point-node-id=122674%3A78741&embed-host=share'},
+{id:'deeba',cat:'independent',label:'Independent · Web',hue:320,url:'https://www.drfarzanadeeba.com/',title:'Dr. Farzana Deeba — Fertility Specialist Website',co:'Independent project',employer:'Independent',client:'Dr. Farzana Deeba',period:'2025',tags:['Website','Healthcare','SEO'],
+overview:'Designed and developed a professional website for Dr. Farzana Deeba, a gynaecologist and fertility specialist based in Dhaka, Bangladesh.',
+points:['Built a full static site with SEO optimisation targeting "best fertility specialist in Dhaka" keywords.','Added Google Maps embed, appointment information, and structured content for search visibility.'],
+images:[]}
 ];
-const FILTERS=[['all','All'],['enterprise','Enterprise'],['platform','Platform'],['media','Media'],['logistics','Logistics'],['sustainability','Sustainability'],['pharma','Pharma']];
+const FILTERS=[['all','All'],['enterprise','Enterprise'],['platform','Platform'],['media','Media'],['logistics','Logistics'],['sustainability','Sustainability'],['pharma','Pharma'],['pitch','Pitches'],['independent','Independent']];
 const app=document.getElementById('app');let filter='all';
 const num=i=>String(i+1).padStart(2,'0');
 const dark=()=>document.documentElement.dataset.theme==='dark';
@@ -203,7 +216,7 @@ function renderDetail(id){
  ${p.client!=='—'?`<div class="fact"><dt>Client</dt><dd>${p.client}</dd></div>`:''}
  <div class="fact"><dt>Domain</dt><dd>${p.label}</dd></div>
  <div class="fact"><dt>Tags</dt><dd class="tags" style="margin-top:4px">${tagsHtml(p)}</dd></div>
- </dl><a class="btn" href="experience.html">View in Experience →</a></aside></div>
+ </dl>${p.url?`<a class="btn" href="${p.url}" target="_blank" rel="noopener">Visit Live Site →</a>`:`<a class="btn" href="experience.html">View in Experience →</a>`}</aside></div>
  <nav class="pager"><button data-open="${prev.id}"><span class="mono">← Previous</span><span class="t">${prev.title}</span></button><button class="next" data-open="${next.id}"><span class="mono">Next →</span><span class="t">${next.title}</span></button></nav>
  </div>`;
  window.scrollTo(0,0);
