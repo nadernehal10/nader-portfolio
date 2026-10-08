@@ -51,12 +51,13 @@ button{font:inherit;color:inherit;background:none;border:none;cursor:pointer}
 .card:hover .phones img{transform:translateY(-12px)}
 .card:hover .phones img:nth-child(2){transform:translateY(-18px)}
 .card:hover .phones img:nth-child(3){transform:translateY(-24px)}
-/* desktop/tablet screenshot — single full-cover in card thumbnails */
-.screens{position:absolute;inset:0;overflow:hidden}
-.screens img{width:100%;height:100%;object-fit:cover;object-position:top center;transition:transform .45s cubic-bezier(.2,.8,.2,1);display:block}
-.card:hover .screens img{transform:scale(1.04)}
+/* desktop/tablet screenshot — full image, no crop */
+.screens{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;overflow:hidden}
+.screens img{width:100%;height:100%;object-fit:contain;object-position:center;transition:transform .45s cubic-bezier(.2,.8,.2,1);display:block}
+.card:hover .screens img{transform:scale(1.03)}
 /* desktop cards always 250px regardless of featured */
 .preview.desktop-preview{height:250px!important}
+@media(max-width:480px){.preview,.preview.desktop-preview{height:200px!important}}
 .cover{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:space-between;padding:1.4rem 1.5rem}
 .cover-num{font-family:var(--disp);font-weight:300;font-size:5rem;line-height:.8;letter-spacing:-.04em;opacity:.9}
 .cover-client{font-family:var(--mono);font-size:11.5px;letter-spacing:.1em;text-transform:uppercase}
@@ -174,7 +175,7 @@ points:['Designed role-based permission matrices for marketing managers, branch 
 {id:'sv-otw',cat:'sustainability',label:'Sustainability Tool',hue:150,title:'SV OTW — Sustainability Management Tool',co:SELISE+' × <a href="https://sv-group.com/en" target="_blank">SV Group</a>',employer:'SELISE Digital Platforms',client:'SV Group',period:'Oct 2022 – Jan 2023',tags:['Web Tool','Sustainability'],
 overview:'Analysed and designed an internal web-based tool to track and evaluate daily food purchases and wastage across outlets.',
 points:['Designed role-based workflows for branch managers and marketing editors to log sustainability activities.','Enabled real-time data entry and automated reporting aligned with SV\'s corporate sustainability goals.'],
-desktop:true,
+desktop:true,screenBg:'#f0f0f0',
 images:[{src:'assets/sv-otw-login.png',cap:'Login — ONE TWO WE portal'},{src:'assets/sv-otw-restaurants.png',cap:'Restaurants overview — client & outlet list'},{src:'assets/sv-otw-audit.png',cap:'Audit view — measures & relevance scoring'}],
 figma:'https://embed.figma.com/proto/bzbmTTEOh8J8ZNTjnAqBxx/SV--Group--pitch-?node-id=250-6667&p=f&viewport=286%2C413%2C0.03&scaling=min-zoom&content-scaling=fixed&starting-point-node-id=603%3A6451&page-id=116%3A3768&embed-host=share'},
 {id:'toffee',cat:'media',label:'OTT / Media',hue:330,title:'Toffee Star Search — Banglalink OTT Platform',co:SELISE+' × <a href="https://www.banglalink.net/" target="_blank">Banglalink</a>',employer:'SELISE Digital Platforms',client:'Banglalink',period:'May 2022 – Jul 2022',tags:['OTT','UGC','Multilingual'],
@@ -183,7 +184,7 @@ points:['Delivered support for multilingual content, SEO optimisation, and leade
 desktop:true,
 images:[{src:'assets/toffee-hero.png',cap:'Toffee Star Search — hero section & navigation'}],
 figma:'https://embed.figma.com/proto/kScU0f41DrXRAlZxPJL355/TOSS?node-id=4974-25275&page-id=4974%3A25273&starting-point-node-id=4974%3A25275&embed-host=share'},
-{id:'service7000',cat:'platform',label:'SaaS Platform',hue:255,featured:true,title:'Repair Management Platform — Service7000 AG',co:SELISE+' × <a href="http://www.service7000.ch" target="_blank">Service7000 AG</a>',employer:'SELISE Digital Platforms',client:'Service7000 AG',period:'Dec 2022 – Jun 2024',tags:['SaaS','Route Optimisation'],
+{id:'service7000',cat:'platform',label:'SaaS Platform',hue:255,title:'Repair Management Platform — Service7000 AG',co:SELISE+' × <a href="http://www.service7000.ch" target="_blank">Service7000 AG</a>',employer:'SELISE Digital Platforms',client:'Service7000 AG',period:'Dec 2022 – Jun 2024',tags:['SaaS','Route Optimisation'],
 overview:'Spearheaded business analysis for a repair and service request management system for tenants, caretakers, and apartment owners.',
 points:['Evaluated and optimised a non-scalable route optimisation algorithm originally developed by a university faculty to support real-world deployment for scalable multi-route scheduling.'],
 desktop:true,
@@ -207,7 +208,7 @@ figma:'https://embed.figma.com/proto/SMKRmT0thCU6tVQjZP1SHo/-Pitch--Kanuschule?n
 {id:'deeba',cat:'independent',label:'Independent · Web',hue:320,url:'https://www.drfarzanadeeba.com/',title:'Dr. Farzana Deeba — Fertility Specialist Website',co:'Independent project',employer:'Independent',client:'Dr. Farzana Deeba',period:'2025',tags:['Website','Healthcare','SEO'],
 overview:'Designed and developed a professional website for Dr. Farzana Deeba, a gynaecologist and fertility specialist based in Dhaka, Bangladesh.',
 points:['Built a full static site with SEO optimisation targeting "best fertility specialist in Dhaka" keywords.','Added Google Maps embed, appointment information, and structured content for search visibility.'],
-desktop:true,
+desktop:true,screenBg:'#f5efe8',
 images:[{src:'assets/deeba-hero.png',cap:'Dr. Farzana Deeba — website hero & navigation'}]}
 ];
 const FILTERS=[['all','All'],['enterprise','Enterprise'],['platform','Platform'],['media','Media'],['logistics','Logistics'],['sustainability','Sustainability'],['pharma','Pharma'],['pitch','Pitches'],['independent','Independent']];
@@ -221,10 +222,11 @@ function cover(p,i){return `<div class="cover" style="background:${coverBg(p.hue
 function preview(p,i){
  if(!p.images.length)return `<div class="preview">${cover(p,i)}<span class="hover-cta">View project →</span></div>`;
  if(p.desktop){
-  return `<div class="preview desktop-preview" style="background:var(--stage)"><span class="badge">${p.images.length} screens</span><div class="screens"><img src="${p.images[0].src}" alt="${p.images[0].cap}" loading="lazy"/></div><span class="hover-cta">View project →</span></div>`;
+  const bg=p.screenBg||'var(--stage)';
+  return `<div class="preview desktop-preview" style="background:${bg}"><div class="screens"><img src="${p.images[0].src}" alt="${p.images[0].cap}" loading="lazy"/></div><span class="hover-cta">View project →</span></div>`;
  }
  const shown=p.images.slice(0,p.featured?3:2);
- return `<div class="preview" style="background:var(--stage)"><span class="badge">${p.images.length} screens</span><div class="phones">${shown.map(im=>`<img src="${im.src}" alt="${im.cap}" loading="lazy"/>`).join('')}</div><span class="hover-cta">View project →</span></div>`}
+ return `<div class="preview" style="background:var(--stage)"><div class="phones">${shown.map(im=>`<img src="${im.src}" alt="${im.cap}" loading="lazy"/>`).join('')}</div><span class="hover-cta">View project →</span></div>`}
 function renderList(){
  const list=P.map((p,i)=>({p,i})).filter(x=>filter==='all'||x.p.cat===filter);
  app.innerHTML=`<div class="container">
