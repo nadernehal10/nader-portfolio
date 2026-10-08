@@ -56,7 +56,7 @@ button{font:inherit;color:inherit;background:none;border:none;cursor:pointer}
 .screens img{width:100%;height:100%;object-fit:cover;object-position:top center;transition:transform .45s cubic-bezier(.2,.8,.2,1);display:block}
 .card:hover .screens img{transform:scale(1.04)}
 /* desktop cards always 250px regardless of featured */
-.card.featured .preview.desktop-preview{height:250px}
+.preview.desktop-preview{height:250px!important}
 .cover{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:space-between;padding:1.4rem 1.5rem}
 .cover-num{font-family:var(--disp);font-weight:300;font-size:5rem;line-height:.8;letter-spacing:-.04em;opacity:.9}
 .cover-client{font-family:var(--mono);font-size:11.5px;letter-spacing:.1em;text-transform:uppercase}
@@ -174,11 +174,13 @@ points:['Designed role-based permission matrices for marketing managers, branch 
 {id:'sv-otw',cat:'sustainability',label:'Sustainability Tool',hue:150,title:'SV OTW — Sustainability Management Tool',co:SELISE+' × <a href="https://sv-group.com/en" target="_blank">SV Group</a>',employer:'SELISE Digital Platforms',client:'SV Group',period:'Oct 2022 – Jan 2023',tags:['Web Tool','Sustainability'],
 overview:'Analysed and designed an internal web-based tool to track and evaluate daily food purchases and wastage across outlets.',
 points:['Designed role-based workflows for branch managers and marketing editors to log sustainability activities.','Enabled real-time data entry and automated reporting aligned with SV\'s corporate sustainability goals.'],
+desktop:true,
 images:[{src:'assets/sv-otw-login.png',cap:'Login — ONE TWO WE portal'},{src:'assets/sv-otw-restaurants.png',cap:'Restaurants overview — client & outlet list'},{src:'assets/sv-otw-audit.png',cap:'Audit view — measures & relevance scoring'}],
 figma:'https://embed.figma.com/proto/bzbmTTEOh8J8ZNTjnAqBxx/SV--Group--pitch-?node-id=250-6667&p=f&viewport=286%2C413%2C0.03&scaling=min-zoom&content-scaling=fixed&starting-point-node-id=603%3A6451&page-id=116%3A3768&embed-host=share'},
 {id:'toffee',cat:'media',label:'OTT / Media',hue:330,title:'Toffee Star Search — Banglalink OTT Platform',co:SELISE+' × <a href="https://www.banglalink.net/" target="_blank">Banglalink</a>',employer:'SELISE Digital Platforms',client:'Banglalink',period:'May 2022 – Jul 2022',tags:['OTT','UGC','Multilingual'],
 overview:'Gathered and documented requirements for the Toffee Star Search microsite supporting Banglalink\'s entry into the UGC space.',
 points:['Delivered support for multilingual content, SEO optimisation, and leaderboard integration for user-generated content.'],
+desktop:true,
 images:[{src:'assets/toffee-hero.png',cap:'Toffee Star Search — hero section & navigation'}],
 figma:'https://embed.figma.com/proto/kScU0f41DrXRAlZxPJL355/TOSS?node-id=4974-25275&page-id=4974%3A25273&starting-point-node-id=4974%3A25275&embed-host=share'},
 {id:'service7000',cat:'platform',label:'SaaS Platform',hue:255,featured:true,title:'Repair Management Platform — Service7000 AG',co:SELISE+' × <a href="http://www.service7000.ch" target="_blank">Service7000 AG</a>',employer:'SELISE Digital Platforms',client:'Service7000 AG',period:'Dec 2022 – Jun 2024',tags:['SaaS','Route Optimisation'],
@@ -199,12 +201,14 @@ points:['Analysed product portfolios evaluating growth trends and overhead costs
 {id:'kanuschule',cat:'pitch',label:'Pre-Sales Pitch',hue:45,title:'Kanuschule — Digital Platform Pitch',co:'SELISE Digital Platforms',employer:'SELISE Digital Platforms',client:'Kanuschule',period:'2023',tags:['Pre-Sales','Pitch','Sports'],
 overview:'Contributed to a pre-sales pitch for a digital platform for Kanuschule, scoping product requirements and presenting an interactive prototype to the client.',
 points:['Worked at the pre-sales stage to define platform scope, user journeys, and feature set.','Presented an interactive Figma prototype to demonstrate the proposed solution to the client.'],
-images:[],
+desktop:true,
+images:[{src:'assets/kanuschule-login.png',cap:'Kanuschule — login screen'}],
 figma:'https://embed.figma.com/proto/SMKRmT0thCU6tVQjZP1SHo/-Pitch--Kanuschule?node-id=122674-78741&page-id=122674%3A76190&starting-point-node-id=122674%3A78741&embed-host=share'},
 {id:'deeba',cat:'independent',label:'Independent · Web',hue:320,url:'https://www.drfarzanadeeba.com/',title:'Dr. Farzana Deeba — Fertility Specialist Website',co:'Independent project',employer:'Independent',client:'Dr. Farzana Deeba',period:'2025',tags:['Website','Healthcare','SEO'],
 overview:'Designed and developed a professional website for Dr. Farzana Deeba, a gynaecologist and fertility specialist based in Dhaka, Bangladesh.',
 points:['Built a full static site with SEO optimisation targeting "best fertility specialist in Dhaka" keywords.','Added Google Maps embed, appointment information, and structured content for search visibility.'],
-images:[]}
+desktop:true,
+images:[{src:'assets/deeba-hero.png',cap:'Dr. Farzana Deeba — website hero & navigation'}]}
 ];
 const FILTERS=[['all','All'],['enterprise','Enterprise'],['platform','Platform'],['media','Media'],['logistics','Logistics'],['sustainability','Sustainability'],['pharma','Pharma'],['pitch','Pitches'],['independent','Independent']];
 const app=document.getElementById('app');let filter='all';
