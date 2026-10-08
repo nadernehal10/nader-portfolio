@@ -174,13 +174,13 @@ overview:'SV Group operates 447+ restaurants across Europe and needed a centrali
 points:['Designed a role-based CMS enabling bulk and individual content operations, with on-the-fly subdomain deployment for each outlet\'s microsite built on Next.js for SEO performance.','Microsites were developed as PWAs so consumers could add them to their home screen directly, improving mobile accessibility across the outlet network.','Defined role-based permission matrices for marketing managers, branch managers, and editors to manage content autonomously.'],
 desktop:true,screenBg:'#fff',
 images:[{src:'assets/sv-cms-login.png',cap:'SV Group CMS — login'},{src:'assets/sv-cms-microsites.png',cap:'Microsites Management — outlet site grid'},{src:'assets/sv-cms-editor.png',cap:'Site editor — section-level content builder'}],
-figma:'https://embed.figma.com/proto/ViRDHgbNsyvTF74BADKx44/-Pitch--SV-Group?node-id=127976-75400&page-id=127972%3A69777&starting-point-node-id=127976%3A75400&embed-host=share'},
+figma:'https://embed.figma.com/proto/ViRDHgbNsyvTF74BADKx44/-Pitch--SV-Group?node-id=127976-75400&page-id=127972%3A69777&starting-point-node-id=127976%3A75400&embed-host=share',
+figma2:'https://embed.figma.com/proto/rgA183AGQK9gTL2HVMBKgs/SV-Group-CMS?node-id=147025-218969&p=f&viewport=277%2C282%2C0.25&scaling=scale-down&content-scaling=fixed&starting-point-node-id=147025%3A218969&show-proto-sidebar=1&page-id=147025%3A218967&embed-host=share',
+figma2label:'End-user microsite view'},
 {id:'sv-otw',cat:'sustainability',label:'Sustainability Tool',hue:150,title:'SV OTW — Sustainability Management Tool',co:SELISE+' × <a href="https://sv-group.com/en" target="_blank">SV Group</a>',employer:'SELISE Digital Platforms',client:'SV Group',period:'Oct 2022 – Jan 2023',tags:['Web Tool','Sustainability'],
 overview:'As one of Europe\'s oldest and largest hospitality groups, SV Group wanted to move beyond instinct-driven decisions on food waste — they needed visibility and a structured way to reduce wastage across 447+ outlets.',
 points:['Designed role-based workflows for branch managers and sustainability leads to log daily food purchase and wastage data, enabling outlet-level accountability.','Enabled real-time data entry and automated reporting that gave SV Group actionable insight to measurably reduce food waste aligned with their corporate sustainability goals.'],
-desktop:true,screenBg:'#f0f0f0',
-images:[{src:'assets/sv-otw-login.png',cap:'Login — ONE TWO WE portal'},{src:'assets/sv-otw-restaurants.png',cap:'Restaurants overview — client & outlet list'},{src:'assets/sv-otw-audit.png',cap:'Audit view — measures & relevance scoring'}],
-figma:'https://embed.figma.com/proto/bzbmTTEOh8J8ZNTjnAqBxx/SV--Group--pitch-?node-id=250-6667&p=f&viewport=286%2C413%2C0.03&scaling=min-zoom&content-scaling=fixed&starting-point-node-id=603%3A6451&page-id=116%3A3768&embed-host=share'},
+images:[{src:'assets/sv-otw-splash.png',cap:'SV Restaurants — app splash screen'},{src:'assets/sv-otw-home.png',cap:'Home — restaurant list, filters & sustainability banner'},{src:'assets/sv-otw-microsite.png',cap:'Gastronomie Circle — outlet microsite view'}]},
 {id:'sv-integration',cat:'platform',label:'Platform · Integration Layer',hue:32,title:'SV Integration Layer — Third-Party Control Platform',co:SELISE+' × <a href="https://sv-group.com/en" target="_blank">SV Group</a>',employer:'SELISE Digital Platforms',client:'SV Group',period:'2022 – 2023',tags:['Integration','IAM','IP Whitelisting'],
 overview:'SV Group\'s centralised ERP connected to several third-party solutions, but they had no way to manage or revoke those integrations without vendor support. They needed full control — from their own UI — over what connected, who had access, and what was logged.',
 points:['Designed a platform for third-party system onboarding and decommissioning, letting SV Group connect or disconnect any external integration without technical vendor involvement.','IP whitelisting and User Access Management were built into the same solution, giving the operations team control over network-level access alongside identity management.','An activity log provided a full audit trail of system interactions, supporting both operational oversight and compliance requirements.'],
@@ -272,7 +272,7 @@ function renderDetail(id){
  <div class="d-grid"><div>
  <section class="d-sec"><h2>Overview</h2><p class="d-overview">${p.overview}</p></section>
  <section class="d-sec"><h2>What I did</h2><ul class="d-points">${p.points.map((t,k)=>`<li><b>${num(k)}</b><span>${t}</span></li>`).join('')}</ul></section>
- ${p.figma?`<section class="d-sec"><h2>Interactive prototype</h2><div class="proto"><iframe src="${p.figma}" allowfullscreen="" loading="lazy"></iframe></div></section>`:''}
+ ${p.figma?`<section class="d-sec"><h2>Interactive prototype</h2><div class="proto"><iframe src="${p.figma}" allowfullscreen="" loading="lazy"></iframe></div>${p.figma2?`<h2 style="margin-top:2rem">${p.figma2label||'End-user view'}</h2><div class="proto"><iframe src="${p.figma2}" allowfullscreen="" loading="lazy"></iframe></div>`:''}</section>`:''}
  </div>
  <aside class="aside"><dl>
  <div class="fact"><dt>Period</dt><dd>${p.period}</dd></div>
