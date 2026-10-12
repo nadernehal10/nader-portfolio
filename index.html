@@ -93,7 +93,7 @@
       </h1>
       <p class="hero-sub fade-up fade-up-1">Senior Business Analyst & Certified Scrum Product Owner with 8+ years across IT products, enterprise software, logistics, and pharma. Based in Dhaka, Bangladesh.</p>
       <div class="hero-actions fade-up fade-up-2">
-        <a href="experience.html" class="btn btn-primary">View Experience</a>
+        <a href="projects.html" class="btn btn-primary">View Projects</a>
         <a href="about.html" class="btn btn-outline">About Me</a>
       </div>
       <div class="hero-stats fade-up fade-up-3">
@@ -144,7 +144,7 @@
         <a href="projects.html" class="btn btn-outline fade-up fade-up-2">All Projects →</a>
       </div>
       <div class="work-grid fade-up fade-up-1">
-        <div class="work-card work-card-wide">
+        <div class="work-card work-card-wide" style="cursor:pointer;" onclick="location.href='projects.html#/project/amberg'">
           <div class="work-num">01 — Enterprise Software · Rail Tech</div>
           <div class="work-title">Amberg Track Pro — Railway Inspection Platform</div>
           <div class="work-co"><a href="https://selisegroup.com/" target="_blank">SELISE Digital Platforms</a> × <a href="https://ambergtechnologies.com/" target="_blank">Amberg Technologies</a></div>
@@ -153,19 +153,19 @@
             <span class="tag">Desktop App</span><span class="tag">Rail Tech</span><span class="tag">Switzerland</span><span class="tag tag-accent">Enterprise</span>
           </div>
         </div>
-        <div class="work-card">
+        <div class="work-card" style="cursor:pointer;" onclick="location.href='projects.html#/project/sv-cms'">
           <div class="work-num">02 — Platform</div>
-          <div class="work-title">CMS for <a href="https://sv-group.com/en" target="_blank" style="color:inherit;text-decoration:none;border-bottom:1px solid var(--border);">SV Group</a> — 100+ Restaurant Outlets</div>
+          <div class="work-title">CMS for <a href="https://sv-group.com/en" target="_blank" style="color:inherit;text-decoration:none;border-bottom:1px solid var(--border);" onclick="event.stopPropagation()">SV Group</a> — 447+ Restaurant Outlets</div>
           <div class="work-co"><a href="https://selisegroup.com/" target="_blank">SELISE Digital Platforms</a></div>
-          <div class="work-desc">Business analysis for a centralised CMS managing menus and content for 100+ restaurant outlets across Europe. Designed role-based permission matrices for marketing, branch, and editorial teams.</div>
-          <div class="work-tags"><span class="tag">CMS</span><span class="tag">Europe</span><span class="tag">100+ Outlets</span></div>
+          <div class="work-desc">Business analysis for a centralised CMS managing menus and content for 447+ restaurant outlets across Europe. Designed role-based permission matrices for marketing, branch, and editorial teams, with on-the-fly microsite deployment per outlet.</div>
+          <div class="work-tags"><span class="tag">CMS</span><span class="tag">Europe</span><span class="tag">447+ Outlets</span></div>
         </div>
-        <div class="work-card">
-          <div class="work-num">03 — OTT / Media</div>
-          <div class="work-title">Toffee Star Search — <a href="https://www.banglalink.net/" target="_blank" style="color:inherit;text-decoration:none;border-bottom:1px solid var(--border);">Banglalink</a> OTT</div>
-          <div class="work-co"><a href="https://selisegroup.com/" target="_blank">SELISE Digital Platforms</a> × Banglalink</div>
-          <div class="work-desc">Defined requirements for the Toffee Star Search microsite supporting Banglalink's entry into the UGC space with multilingual content, SEO optimisation, and leaderboard integration.</div>
-          <div class="work-tags"><span class="tag">OTT</span><span class="tag">UGC</span><span class="tag">Bangladesh</span></div>
+        <div class="work-card" style="cursor:pointer;" onclick="location.href='projects.html#/project/service7000'">
+          <div class="work-num">03 — Repair Management · Switzerland</div>
+          <div class="work-title">Repair Management Platform — Service7000 AG</div>
+          <div class="work-co"><a href="https://selisegroup.com/" target="_blank" onclick="event.stopPropagation()">SELISE Digital Platforms</a> × <a href="http://www.service7000.ch" target="_blank" onclick="event.stopPropagation()">Service7000 AG</a></div>
+          <div class="work-desc">Spearheaded business analysis for a repair and service request management system for tenants, caretakers, and apartment owners. Redesigned the user experience that had a high bounce rate — simplifying repair request flows to improve end-user adoption.</div>
+          <div class="work-tags"><span class="tag">Repair Mgmt</span><span class="tag">Switzerland</span><span class="tag tag-accent">UX Redesign</span></div>
         </div>
       </div>
     </div>
@@ -179,14 +179,14 @@
         <div>
           <div style="font-size:11px;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;color:var(--ink-3);margin-bottom:1rem;">Core Skills</div>
           <ul class="skill-list fade-up fade-up-1">
-            <li>API Integration & Platform Development</li>
-            <li>Product & Project Management</li>
-            <li>Technical Documentation</li>
-            <li>Agile & Scrum Methodologies</li>
-            <li>Quality Assurance & User Experience</li>
-            <li>Business Analysis & Requirements</li>
-            <li>Stakeholder Management</li>
-            <li>User Story Writing</li>
+            <li>AI Workflow Design & Enablement</li>
+            <li>Product Ownership & Roadmap Planning</li>
+            <li>Requirements Engineering & User Stories</li>
+            <li>API & System Integration Analysis</li>
+            <li>Agile & Scrum Delivery</li>
+            <li>Data-Driven Decision Making</li>
+            <li>Stakeholder Alignment & UAT Facilitation</li>
+            <li>Process Optimisation & Automation Readiness</li>
           </ul>
         </div>
         <div>
@@ -194,10 +194,15 @@
           <div style="display:flex;flex-wrap:wrap;gap:8px;" class="fade-up fade-up-2">
             <span class="tag">Figma</span><span class="tag">Miro</span><span class="tag">Notion</span>
             <span class="tag">Jira</span><span class="tag">Confluence</span><span class="tag">Swagger</span>
-            <span class="tag">MS Suite</span><span class="tag">Postman</span><span class="tag">SQL</span>
+            <span class="tag">Postman</span><span class="tag">SQL</span><span class="tag">MS Copilot</span>
+            <span class="tag">ChatGPT</span><span class="tag">Claude</span>
           </div>
           <div style="margin-top:2rem;">
-            <div style="font-size:11px;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;color:var(--ink-3);margin-bottom:1rem;">Certification</div>
+            <div style="font-size:11px;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;color:var(--ink-3);margin-bottom:1rem;">AI Enablement Focus</div>
+            <div class="fade-up fade-up-2" style="border:1px solid var(--border);border-radius:12px;padding:1.2rem;margin-bottom:10px;">
+              <div style="font-size:13px;font-weight:500;color:var(--ink);margin-bottom:4px;">Translating AI capabilities into product requirements</div>
+              <div style="font-size:12px;color:var(--ink-3);line-height:1.6;">Bridging the gap between engineering AI potential and real operational impact — defining use cases, success metrics, and integration touchpoints for AI-augmented workflows.</div>
+            </div>
             <div class="fade-up fade-up-3" style="border:1px solid var(--border);border-radius:12px;padding:1.2rem;">
               <div style="font-size:13px;font-weight:500;color:var(--ink);margin-bottom:4px;">Certified Scrum Product Owner (CSPO)</div>
               <div style="font-size:12px;color:var(--ink-3);">Scrum Alliance · Credential ID 1394634</div>
